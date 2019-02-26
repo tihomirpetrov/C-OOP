@@ -5,18 +5,7 @@
     {
         public static void Main()
         {
-
             int size = int.Parse(Console.ReadLine());
-
-            //for (int i = 1; i <= size; i++)
-            //{
-            //    PrintRow(size, i);
-            //}
-
-            //for (int i = size - 1; i >= 1; i--)
-            //{
-            //    PrintRow(size, i);
-            //}
 
             for (int starCount = 1; starCount <= size; starCount++)
             {
@@ -41,6 +30,6 @@
                 Console.Write("* ");
             }
             Console.WriteLine();
-        }        
+        }
     }
 }
