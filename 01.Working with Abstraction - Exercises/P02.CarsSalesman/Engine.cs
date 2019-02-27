@@ -6,8 +6,8 @@
         private const string offset = "  ";
         private const string defaultEfficiencyValue = "n/a";
 
-        private int power;
         private string model;
+        private int power;
         private int displacement;
         private string efficiency;
 
