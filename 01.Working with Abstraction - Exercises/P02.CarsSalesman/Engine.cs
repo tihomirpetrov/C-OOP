@@ -6,7 +6,7 @@
         private const string offset = "  ";
         private const string defaultEfficiencyValue = "n/a";
 
-        private string model;
+        //private string model;
         private int power;
         private int displacement;
         private string efficiency;

@@ -6,7 +6,10 @@
     {
         static void Main(string[] args)
         {
-            CarSalesman carSalesman = new CarSalesman();
+            CarFactory carFactory = new CarFactory();
+            EngineFactory engineFactory = new EngineFactory();
+
+            CarSalesman carSalesman = new CarSalesman(carFactory, engineFactory);
 
             int engineCount = int.Parse(Console.ReadLine());
 
