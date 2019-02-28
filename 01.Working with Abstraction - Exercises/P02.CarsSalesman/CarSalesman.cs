@@ -1,7 +1,6 @@
 ﻿namespace P02.CarsSalesman
 {
     using System.Collections.Generic;
-    using System.Linq;
 
     public class CarSalesman
     {

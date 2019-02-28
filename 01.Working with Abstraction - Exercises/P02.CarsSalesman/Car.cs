@@ -1,6 +1,7 @@
 ﻿namespace P02.CarsSalesman
 {
     using System.Text;
+
     public class Car
     {
         private const string offset = "  ";
