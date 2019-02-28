@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01.RawData", "P01.RawData\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02.CarsSalesman", "P02.CarsSalesman\P02.CarsSalesman.csproj", "{69484E71-3AA9-45CA-831B-313CC1866857}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03.JediGalaxy", "P03.JediGalaxy\P03.JediGalaxy.csproj", "{62E87DF5-C444-4373-94C8-31EC77FE1B0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{69484E71-3AA9-45CA-831B-313CC1866857}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69484E71-3AA9-45CA-831B-313CC1866857}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69484E71-3AA9-45CA-831B-313CC1866857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62E87DF5-C444-4373-94C8-31EC77FE1B0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62E87DF5-C444-4373-94C8-31EC77FE1B0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62E87DF5-C444-4373-94C8-31EC77FE1B0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62E87DF5-C444-4373-94C8-31EC77FE1B0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
