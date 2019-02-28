@@ -68,5 +68,10 @@
                 cars.Add(new Car(model, engine));
             }
         }
+
+        public List<Car> GetCars()
+        {
+            return this.cars;
+        }
     }
 }

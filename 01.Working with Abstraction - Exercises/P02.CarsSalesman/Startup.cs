@@ -1,10 +1,7 @@
 ﻿namespace P02.CarsSalesman
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-
+    
     public class Startup
     {
         static void Main(string[] args)
@@ -29,7 +26,7 @@
                 carSalesman.AddCar(parameters);
             }
 
-            foreach (var car in cars)
+            foreach (var car in carSalesman.GetCars())
             {
                 Console.WriteLine(car);
             }

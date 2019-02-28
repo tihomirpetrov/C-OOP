@@ -38,7 +38,7 @@
             StringBuilder sb = new StringBuilder();
             sb.AppendFormat("{0}{1}:\n", offset, this.Model);
             sb.AppendFormat("{0}{0}Power: {1}\n", offset, this.power);
-            sb.AppendFormat("{0}{0}Displacement: {1}\n", offset, this.displacement == -1 ? "n/a" : this.displacement.ToString());
+            sb.AppendFormat("{0}{0}Displacement: {1}\n", offset, this.displacement == -1 ? defaultEfficiencyValue : this.displacement.ToString());
             sb.AppendFormat("{0}{0}Efficiency: {1}\n", offset, this.efficiency);
 
             return sb.ToString();
