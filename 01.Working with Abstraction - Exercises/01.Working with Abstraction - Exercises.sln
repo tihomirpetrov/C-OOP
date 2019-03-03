@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02.CarsSalesman", "P02.Car
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03.JediGalaxy", "P03.JediGalaxy\P03.JediGalaxy.csproj", "{62E87DF5-C444-4373-94C8-31EC77FE1B0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04.Hospital", "P04.Hospital\P04.Hospital.csproj", "{E624B72F-3351-4A89-9AFE-F04BCA3D671B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P04.Hospital", "P04.Hospital\P04.Hospital.csproj", "{E624B72F-3351-4A89-9AFE-F04BCA3D671B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05.GreedyTimes", "P05.GreedyTimes\P05.GreedyTimes.csproj", "{71913FBB-737F-4ADA-943E-AE12F76952FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05.GreedyTimes-", "P05.GreedyTimes-\P05.GreedyTimes-.csproj", "{276BEA1E-5C0D-41C2-AB01-D80C9C37D898}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{E624B72F-3351-4A89-9AFE-F04BCA3D671B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E624B72F-3351-4A89-9AFE-F04BCA3D671B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E624B72F-3351-4A89-9AFE-F04BCA3D671B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71913FBB-737F-4ADA-943E-AE12F76952FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71913FBB-737F-4ADA-943E-AE12F76952FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71913FBB-737F-4ADA-943E-AE12F76952FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71913FBB-737F-4ADA-943E-AE12F76952FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{276BEA1E-5C0D-41C2-AB01-D80C9C37D898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{276BEA1E-5C0D-41C2-AB01-D80C9C37D898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{276BEA1E-5C0D-41C2-AB01-D80C9C37D898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{276BEA1E-5C0D-41C2-AB01-D80C9C37D898}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
