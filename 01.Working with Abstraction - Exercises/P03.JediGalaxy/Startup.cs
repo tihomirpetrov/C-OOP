@@ -7,58 +7,85 @@
     {
         public static void Main()
         {
-            int[] dimensions = Console.ReadLine().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
-            int rows = dimensions[0];
-            int cols = dimensions[1];
+            var matrix = GetMatrix();
+            var collectedStars = CollectStars(matrix);
+            Console.WriteLine(collectedStars);
+        }
 
-            int[,] matrix = new int[rows, cols];
+        private static long CollectStars(int[][] matrix)
+        {
+            var collectedStars = 0L;
+            var input = Console.ReadLine();
 
-            int value = 0;
-            for (int row = 0; row < rows; row++)
+            while (input != "Let the Force be with you")
             {
-                for (int col = 0; col < cols; col++)
+                var ivoPosition = input.Split().Select(int.Parse).ToArray();
+                var evilPosition = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+                EvilMove(matrix, evilPosition);
+                collectedStars += IvoMoove(matrix, ivoPosition);
+
+                input = Console.ReadLine();
+            }
+
+            return collectedStars;
+        }
+
+        private static long IvoMoove(int[][] matrix, int[] ivoPosition)
+        {
+            var stars = 0L;
+
+            while (ivoPosition[0] >= 0 && ivoPosition[1] < matrix[0].Length)
+            {
+                if (IsInMatrix(matrix, ivoPosition))
                 {
-                    matrix[row, col] = value++;
+                    stars += matrix[ivoPosition[0]][ivoPosition[1]];
+                }
+
+                ivoPosition[0]--;
+                ivoPosition[1]++;
+            }
+
+            return stars;
+        }
+
+        private static void EvilMove(int[][] matrix, int[] evilPosition)
+        {
+            while (evilPosition[0] >= 0 && evilPosition[1] >= 0)
+            {
+                if (IsInMatrix(matrix, evilPosition))
+                {
+                    matrix[evilPosition[0]][evilPosition[1]] = 0;
+                }
+
+                evilPosition[0]--;
+                evilPosition[1]--;
+            }
+        }
+
+        private static bool IsInMatrix(int[][] matrix, int[] position)
+        {
+            return position[0] >= 0 && position[1] >= 0 && position[0] < matrix.Length && position[1] < matrix[position[0]].Length;
+        }
+
+        private static int[][] GetMatrix()
+        {
+            var dimensions = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            var matrix = new int[dimensions[0]][];
+            var cellValue = 0;
+
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                matrix[i] = new int[dimensions[1]];
+
+                for (int j = 0; j < matrix[i].Length; j++)
+                {
+                    matrix[i][j] = cellValue;
+                    cellValue++;
                 }
             }
 
-            string command = Console.ReadLine();
-            long sum = 0;
-            while (command != "Let the Force be with you")
-            {
-                int[] coordinatesIvo = command.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
-                int[] coordinatesEvilPower = Console.ReadLine().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
-                int coordinatesEvilPowerX = coordinatesEvilPower[0];
-                int coordinatesEvilPowerY = coordinatesEvilPower[1];
-
-                while (coordinatesEvilPowerX >= 0 && coordinatesEvilPowerY >= 0)
-                {
-                    if (coordinatesEvilPowerX >= 0 && coordinatesEvilPowerX < matrix.GetLength(0) && coordinatesEvilPowerY >= 0 && coordinatesEvilPowerY < matrix.GetLength(1))
-                    {
-                        matrix[coordinatesEvilPowerX, coordinatesEvilPowerY] = 0;
-                    }
-                    coordinatesEvilPowerX--;
-                    coordinatesEvilPowerY--;
-                }
-
-                int coordinatesIvoX = coordinatesIvo[0];
-                int coordinatesIvoY = coordinatesIvo[1];
-
-                while (coordinatesIvoX >= 0 && coordinatesIvoY < matrix.GetLength(1))
-                {
-                    if (coordinatesIvoX >= 0 && coordinatesIvoX < matrix.GetLength(0) && coordinatesIvoY >= 0 && coordinatesIvoY < matrix.GetLength(1))
-                    {
-                        sum += matrix[coordinatesIvoX, coordinatesIvoY];
-                    }
-
-                    coordinatesIvoY++;
-                    coordinatesIvoX--;
-                }
-
-                command = Console.ReadLine();
-            }
-
-            Console.WriteLine(sum);
+            return matrix;
         }
     }
 }
