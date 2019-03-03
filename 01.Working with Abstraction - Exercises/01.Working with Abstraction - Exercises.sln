@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05.GreedyTimes-", "P05.Gre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P06.Sneaking", "P06.Sneaking\P06.Sneaking.csproj", "{73820EF8-4226-4D62-A6EE-0459BF3CC391}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P07.FamilyTree", "P07.FamilyTree\P07.FamilyTree.csproj", "{3E787DA8-412B-4D68-A6D4-0B9DC2CB4400}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{73820EF8-4226-4D62-A6EE-0459BF3CC391}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73820EF8-4226-4D62-A6EE-0459BF3CC391}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73820EF8-4226-4D62-A6EE-0459BF3CC391}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E787DA8-412B-4D68-A6D4-0B9DC2CB4400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E787DA8-412B-4D68-A6D4-0B9DC2CB4400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E787DA8-412B-4D68-A6D4-0B9DC2CB4400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E787DA8-412B-4D68-A6D4-0B9DC2CB4400}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
