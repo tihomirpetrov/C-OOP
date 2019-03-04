@@ -1,5 +1,6 @@
 ﻿namespace P02.ClassBoxDataValidation
 {
+    using System;
     public class Box
     {
         private double length;
@@ -8,9 +9,9 @@
 
         public Box(double length, double width, double height)
         {
-            this.length = length;
-            this.width = width;
-            this.height = height;
+            this.Length = length;
+            this.Width = width;
+            this.Height = height;
         }
 
         public double Length
@@ -19,8 +20,9 @@
             {
                 return this.length;
             }
-            set
+            private set
             {
+                this.ValidateParameter(value, nameof(this.Length));
                 this.length = value;
             }
         }
@@ -30,20 +32,31 @@
             {
                 return this.width;
             }
-            set
-            {
+            private set
+            {                
+                this.ValidateParameter(value, nameof(this.Width));
                 this.width = value;
             }
         }
+
         public double Height
         {
             get
             {
                 return this.height;
             }
-            set
+            private set
             {
+                this.ValidateParameter(value, nameof(this.Height));
+
                 this.height = value;
+            }
+        }
+        private void ValidateParameter(double value, string parameterName)
+        {
+            if (value < 0)
+            {
+                throw new ArgumentException($"{parameterName} cannot be zero or negative.");
             }
         }
 
