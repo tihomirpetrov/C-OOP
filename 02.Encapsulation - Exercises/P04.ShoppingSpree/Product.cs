@@ -25,7 +25,7 @@
             {
                 if (string.IsNullOrWhiteSpace(value) || value == string.Empty)
                 {
-                    throw new ArgumentException("Name cannot be empty.");
+                    throw new ArgumentException("Name cannot be empty");
                 }
 
                 this.name = value;
