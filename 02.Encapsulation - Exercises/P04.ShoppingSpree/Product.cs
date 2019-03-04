@@ -1,15 +1,13 @@
 ﻿namespace P04.ShoppingSpree
 {
     using System;
-    using System.Collections.Generic;
 
     public class Product
     {
         private string name;
-        private double cost;
-        
+        private decimal cost;        
 
-        public Product(string name, double cost)
+        public Product(string name, decimal cost)
         {
             this.Name = name;
             this.Cost = cost;
@@ -23,7 +21,7 @@
             }
             private set
             {
-                if (string.IsNullOrWhiteSpace(value) || value == string.Empty)
+                if (string.IsNullOrEmpty(value))
                 {
                     throw new ArgumentException("Name cannot be empty");
                 }
@@ -32,7 +30,7 @@
             }
         }
 
-        public double Cost
+        public decimal Cost
         {
             get
             {
@@ -40,6 +38,10 @@
             }
             private set
             {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Money cannot be negative");
+                }
                 this.cost = value;
             }
         }

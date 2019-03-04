@@ -17,7 +17,7 @@
             {
                 string[] tokens = item.Split('=');
                 string name = tokens[0];
-                double money = double.Parse(tokens[1]);
+                decimal money = decimal.Parse(tokens[1]);
 
                 try
                 {
@@ -37,7 +37,7 @@
             {
                 string[] tokens = item.Split('=');
                 string name = tokens[0];
-                double cost = double.Parse(tokens[1]);
+                decimal cost = decimal.Parse(tokens[1]);
 
                 try
                 {

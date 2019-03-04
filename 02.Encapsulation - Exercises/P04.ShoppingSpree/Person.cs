@@ -5,10 +5,10 @@
     public class Person
     {
         private string name;
-        private double money;
+        private decimal money;
         private List<Product> bagOfProducts;
 
-        public Person(string name, double money)
+        public Person(string name, decimal money)
         {
             this.Name = name;
             this.Money = money;
@@ -32,7 +32,7 @@
             }
         }
 
-        public double Money
+        public decimal Money
         {
             get
             {
