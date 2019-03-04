@@ -1,6 +1,5 @@
-﻿namespace P01.ClassBox
+﻿namespace P02.ClassBoxDataValidation
 {
-    using System.Text;
     public class Box
     {
         private double length;
@@ -9,9 +8,9 @@
 
         public Box(double length, double width, double height)
         {
-            this.Length = length;
-            this.Width = width;
-            this.Height = height;
+            this.length = length;
+            this.width = width;
+            this.height = height;
         }
 
         public double Length

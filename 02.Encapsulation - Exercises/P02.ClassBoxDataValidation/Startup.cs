@@ -1,4 +1,4 @@
-﻿namespace P01.ClassBox
+﻿namespace P02.ClassBoxDataValidation
 {
     using System;
     public class Startup
