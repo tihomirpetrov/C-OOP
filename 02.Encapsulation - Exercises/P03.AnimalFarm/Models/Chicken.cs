@@ -1,7 +1,6 @@
-﻿using System;
-
-namespace AnimalFarm.Models
+﻿namespace AnimalFarm.Models
 {
+    using System;
     public class Chicken
     {
         public const int MinAge = 0;
@@ -25,7 +24,10 @@ namespace AnimalFarm.Models
 
             internal set
             {
-                this.ValidateName(nameof(this.Name));
+                if (string.IsNullOrWhiteSpace(value) || value == string.Empty)
+                {
+                    throw new ArgumentException("Name cannot be empty.");
+                }
                 this.name = value;
             }
         }
@@ -53,44 +55,33 @@ namespace AnimalFarm.Models
             }
         }
 
-        private void ValidateName(string chickenName)
+        public double GetProductPerDay()
         {
-            if (chickenName.Length < 1 || chickenName == " " || chickenName == null)
-            {
-                throw new ArgumentException($"{chickenName} cannot be empty.");
-            }
+           return this.CalculateProductPerDay();
         }
 
-        public double ProductPerDay
+    public double CalculateProductPerDay()
+    {
+        switch (this.Age)
         {
-            get
-            {
-                return this.CalculateProductPerDay();
-            }
-        }
-
-        public double CalculateProductPerDay()
-        {
-            switch (this.Age)
-            {
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                    return 1.5;
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                    return 2;
-                case 8:
-                case 9:
-                case 10:
-                case 11:
-                    return 1;
-                default:
-                    return 0.75;
-            }
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                return 1.5;
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+                return 2;
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+                return 1;
+            default:
+                return 0.75;
         }
     }
+}
 }
