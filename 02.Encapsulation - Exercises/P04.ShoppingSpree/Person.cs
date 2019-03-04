@@ -25,8 +25,9 @@
 
                 if (string.IsNullOrWhiteSpace(value) || value == string.Empty)
                 {
-                    throw new ArgumentException("Name cannot be empty.");
+                    throw new ArgumentException("Name cannot be empty");                    
                 }
+
                 this.name = value;
             }
         }
@@ -43,6 +44,7 @@
                 {
                     throw new ArgumentException("Money cannot be negative");
                 }
+
                 this.money = value;
             }
         }

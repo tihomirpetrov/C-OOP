@@ -27,6 +27,7 @@
                 {
                     throw new ArgumentException("Name cannot be empty.");
                 }
+
                 this.name = value;
             }
         }
