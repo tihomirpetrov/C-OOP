@@ -9,44 +9,10 @@
 
         public Box(double length, double width, double height)
         {
-            this.Length = length;
-            this.Width = width;
-            this.Height = height;
-        }
-
-        public double Length
-        {
-            get
-            {
-                return this.length;
-            }
-            set
-            {
-                this.length = value;
-            }
-        }
-        public double Width
-        {
-            get
-            {
-                return this.width;
-            }
-            set
-            {
-                this.width = value;
-            }
-        }
-        public double Height
-        {
-            get
-            {
-                return this.height;
-            }
-            set
-            {
-                this.height = value;
-            }
-        }
+            this.length = length;
+            this.width = width;
+            this.height = height;
+        }                
 
         public double CalculateSurfaceArea()
         {
