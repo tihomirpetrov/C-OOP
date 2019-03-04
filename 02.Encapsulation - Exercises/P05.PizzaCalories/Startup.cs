@@ -21,7 +21,7 @@
                 Pizza pizza = new Pizza(pizzaName, dough);
                 string inputLine = Console.ReadLine();
 
-                while (inputLine != "End")
+                while (inputLine != "END")
                 {
                     string[] toppingArgs = inputLine.Split();
                     string toppingType = toppingArgs[1];

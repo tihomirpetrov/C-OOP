@@ -31,7 +31,7 @@
             }
             private set
             {
-                if (!validFlourTypes.ContainsKey(value))
+                if (!validFlourTypes.ContainsKey(value.ToLower()))
                 {
                     throw new ArgumentException("Invalid type of dough.");
                 }
@@ -48,7 +48,7 @@
             }
             private set
             {
-                if (!validBakingTechniques.ContainsKey(value))
+                if (!validBakingTechniques.ContainsKey(value.ToLower()))
                 {
                     throw new ArgumentException("Invalid type of dough.");
                 }
@@ -75,19 +75,19 @@
         }
         public double CalculateCalories()
         {
-            return BaseDoughCalories * this.Weight * this.validFlourTypes[this.FlourType] * this.validBakingTechniques[this.BakingTechnique];
+            return BaseDoughCalories * this.Weight * this.validFlourTypes[this.FlourType.ToLower()] * this.validBakingTechniques[this.BakingTechnique.ToLower()];
         }
 
         private void SeedFlourTypes()
         {
-            this.validFlourTypes.Add("White", 1.5);
-            this.validFlourTypes.Add("Wholegrain", 1.0);
+            this.validFlourTypes.Add("white", 1.5);
+            this.validFlourTypes.Add("wholegrain", 1.0);
         }
         private void SeedBakingTehniques()
         {
-            this.validBakingTechniques.Add("Crispi", 0.9);
-            this.validBakingTechniques.Add("Chewy", 1.1);
-            this.validBakingTechniques.Add("Homemade", 1.0);
+            this.validBakingTechniques.Add("crispy", 0.9);
+            this.validBakingTechniques.Add("chewy", 1.1);
+            this.validBakingTechniques.Add("homemade", 1.0);
         }
     }
 }

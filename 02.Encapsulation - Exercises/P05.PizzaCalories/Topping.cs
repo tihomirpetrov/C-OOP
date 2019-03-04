@@ -27,10 +27,11 @@
             }
             set
             {
-                if (!validTypes.ContainsKey(value))
+                if (!validTypes.ContainsKey(value.ToLower()))
                 {
                     throw new ArgumentException($"Cannot place {value} on top of your pizza.");
                 }
+
                 this.type = value;
             }
         }
@@ -54,14 +55,14 @@
 
         public double CalculateCalories()
         {
-            return BaseToppingCalories * this.Weight * this.validTypes[this.Type];
+            return BaseToppingCalories * this.Weight * this.validTypes[this.Type.ToLower()];
         }
         private void SeedTypes()
         {
-            this.validTypes.Add("Meat", 1.2);
-            this.validTypes.Add("Veggies", 0.8);
-            this.validTypes.Add("Cheese", 1.1);
-            this.validTypes.Add("Sauce", 0.9);
+            this.validTypes.Add("meat", 1.2);
+            this.validTypes.Add("veggies", 0.8);
+            this.validTypes.Add("cheese", 1.1);
+            this.validTypes.Add("sauce", 0.9);
         }
     }
 }
