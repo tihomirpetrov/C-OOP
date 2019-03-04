@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04.ShoppingSpree", "P04.Sh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05.PizzaCalories", "P05.PizzaCalories\P05.PizzaCalories.csproj", "{0B3300E4-622B-4979-AE69-6CE62177F83C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P06.FootballTeamGenerator", "P06.FootballTeamGenerator\P06.FootballTeamGenerator.csproj", "{2FFB62BF-5D0E-448C-A031-6C615D74E73D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0B3300E4-622B-4979-AE69-6CE62177F83C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B3300E4-622B-4979-AE69-6CE62177F83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B3300E4-622B-4979-AE69-6CE62177F83C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FFB62BF-5D0E-448C-A031-6C615D74E73D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FFB62BF-5D0E-448C-A031-6C615D74E73D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FFB62BF-5D0E-448C-A031-6C615D74E73D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FFB62BF-5D0E-448C-A031-6C615D74E73D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
