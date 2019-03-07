@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02.SalaryIncrease", "P02.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03.ValidationOfData", "P03.ValidationOfData\P03.ValidationOfData.csproj", "{D3A72CBC-5935-4E97-9AA7-66841C84E882}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04.FirstAndReserveTeam", "P04.FirstAndReserveTeam\P04.FirstAndReserveTeam.csproj", "{68C4839E-5ADB-432B-B6E0-BDA6190F8C1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D3A72CBC-5935-4E97-9AA7-66841C84E882}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3A72CBC-5935-4E97-9AA7-66841C84E882}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3A72CBC-5935-4E97-9AA7-66841C84E882}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C4839E-5ADB-432B-B6E0-BDA6190F8C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C4839E-5ADB-432B-B6E0-BDA6190F8C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C4839E-5ADB-432B-B6E0-BDA6190F8C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C4839E-5ADB-432B-B6E0-BDA6190F8C1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
