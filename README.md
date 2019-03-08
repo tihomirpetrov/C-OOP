@@ -3,3 +3,6 @@ C# OOP - february 2019
 
 01. Working with Abstraction - Lab
 01. Working with Abstraction - Exercise
+02. Encapsulation - Lab
+02. Encapsulation - Exercises
+03. Inheritance - Lab
