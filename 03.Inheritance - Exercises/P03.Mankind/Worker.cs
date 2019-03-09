@@ -47,7 +47,7 @@
 
         public double CalculateSalaryPerHour()
         {
-            return this.weekSalary / this.workHoursPerDay * 5;
+            return this.weekSalary / (this.workHoursPerDay * 5);
         }
 
         public override string ToString()
