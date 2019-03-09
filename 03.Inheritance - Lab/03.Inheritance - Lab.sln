@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01.SingleInheritance", "P01.SingleInheritance\P01.SingleInheritance.csproj", "{A701B825-AA71-47AC-B050-C641F4AF7099}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01.SingleInheritance", "P01.SingleInheritance\P01.SingleInheritance.csproj", "{A701B825-AA71-47AC-B050-C641F4AF7099}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02.MultipleInheritance", "P02.MultipleInheritance\P02.MultipleInheritance.csproj", "{FAF630EC-DCA1-499B-A973-AC3840E8CE5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A701B825-AA71-47AC-B050-C641F4AF7099}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A701B825-AA71-47AC-B050-C641F4AF7099}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A701B825-AA71-47AC-B050-C641F4AF7099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAF630EC-DCA1-499B-A973-AC3840E8CE5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAF630EC-DCA1-499B-A973-AC3840E8CE5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAF630EC-DCA1-499B-A973-AC3840E8CE5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAF630EC-DCA1-499B-A973-AC3840E8CE5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
