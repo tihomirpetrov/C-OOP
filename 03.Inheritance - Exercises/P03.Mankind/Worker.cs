@@ -1,6 +1,8 @@
 ﻿namespace P03.Mankind
 {
     using System;
+    using System.Text;
+
     public class Worker : Human
     {
         private double weekSalary;
@@ -46,6 +48,17 @@
         public double CalculateSalaryPerHour()
         {
             return this.weekSalary / this.workHoursPerDay * 5;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(base.ToString());
+            sb.AppendLine($"Week Salary: {this.weekSalary:f2}");
+            sb.AppendLine($"Hours per day: {this.workHoursPerDay:f2}");
+            sb.Append($"Salary per hour: {CalculateSalaryPerHour():f2}");
+
+            return sb.ToString();
         }
     }
 }

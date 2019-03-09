@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace P03.Mankind
+﻿namespace P03.Mankind
 {
+    using System;
+    using System.Text;
     public class Human
     {
         private string firstName;
@@ -49,6 +49,15 @@ namespace P03.Mankind
                 }
                 this.lastName = value;
             }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"First Name: {this.firstName}");
+            sb.AppendLine($"Last Name: {this.lastName}");
+
+            return sb.ToString().TrimEnd();
         }
     }
 }
