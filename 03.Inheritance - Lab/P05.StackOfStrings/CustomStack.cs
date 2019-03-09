@@ -1,8 +1,8 @@
 ﻿namespace CustomStack
 {
-    using System.Collections;
+    using System.Collections.Generic;
 
-    public class CustomStack : Stack
+    public class CustomStack : Stack<string>
     {
         public bool IsEmpty()
         {
