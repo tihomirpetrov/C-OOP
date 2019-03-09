@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02.BookShop", "P02.BookSho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03.Mankind", "P03.Mankind\P03.Mankind.csproj", "{8B8010B4-2159-4B44-BFE8-D1B1CCBA968C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04.OnlineRadioDatabase", "P04.OnlineRadioDatabase\P04.OnlineRadioDatabase.csproj", "{EB8087F3-BA84-44D0-82D3-2DFC7F7E2647}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8B8010B4-2159-4B44-BFE8-D1B1CCBA968C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B8010B4-2159-4B44-BFE8-D1B1CCBA968C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B8010B4-2159-4B44-BFE8-D1B1CCBA968C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB8087F3-BA84-44D0-82D3-2DFC7F7E2647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB8087F3-BA84-44D0-82D3-2DFC7F7E2647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB8087F3-BA84-44D0-82D3-2DFC7F7E2647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB8087F3-BA84-44D0-82D3-2DFC7F7E2647}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
