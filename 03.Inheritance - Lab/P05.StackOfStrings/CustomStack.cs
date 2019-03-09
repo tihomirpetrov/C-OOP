@@ -2,18 +2,18 @@
 {
     using System.Collections.Generic;
 
-    public class CustomStack : Stack<string>
+    public class StackOfStrings : Stack<string>
     {
         public bool IsEmpty()
         {
             return this.Count == 0;
         }
 
-        public void AddRange(params string[] data)
+        public void AddRange(IEnumerable<string> elements)
         {
-            foreach (var item in data)
+            foreach (var element in elements)
             {
-                this.Push(item);
+                this.Push(element);
             }
         }
     }
