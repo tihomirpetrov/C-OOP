@@ -5,11 +5,11 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01.Person", "P01.Person\P01.Person.csproj", "{0AEF6533-5C4D-4B6E-96D0-C60ABBB25972}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02.BookShop", "P02.BookShop\P02.BookShop.csproj", "{E9833BD3-353D-42A1-ABAD-829C85DBB776}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02.BookShop", "P02.BookShop\P02.BookShop.csproj", "{E9833BD3-353D-42A1-ABAD-829C85DBB776}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03.Mankind", "P03.Mankind\P03.Mankind.csproj", "{8B8010B4-2159-4B44-BFE8-D1B1CCBA968C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03.Mankind", "P03.Mankind\P03.Mankind.csproj", "{8B8010B4-2159-4B44-BFE8-D1B1CCBA968C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04.OnlineRadioDatabase", "P04.OnlineRadioDatabase\P04.OnlineRadioDatabase.csproj", "{EB8087F3-BA84-44D0-82D3-2DFC7F7E2647}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P04.OnlineRadioDatabase", "P04.OnlineRadioDatabase\P04.OnlineRadioDatabase.csproj", "{EB8087F3-BA84-44D0-82D3-2DFC7F7E2647}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
