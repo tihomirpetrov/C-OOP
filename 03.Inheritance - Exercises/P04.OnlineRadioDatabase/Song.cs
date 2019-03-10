@@ -25,7 +25,7 @@
             }
             set
             {
-                if (value.Length < 3 && value.Length > 20)
+                if (value.Length < 3 || value.Length > 20)
                 {
                     throw new ArgumentException("Artist name should be between 3 and 20 symbols.");
                 }
@@ -40,7 +40,7 @@
             }
             set
             {
-                if (value.Length < 3 && value.Length > 30)
+                if (value.Length < 3 || value.Length > 30)
                 {
                     throw new ArgumentException("Song name should be between 3 and 30 symbols.");
                 }
@@ -55,7 +55,7 @@
             }
             set
             {
-                if (value < 0 && value > 14)
+                if (value < 0 || value > 14)
                 {
                     throw new ArgumentException("Song minutes should be between 0 and 14.");
                 }
@@ -72,7 +72,7 @@
             }
             set
             {
-                if (value < 0 && value > 59)
+                if (value < 0 || value > 59)
                 {
                     throw new ArgumentException("Song seconds should be between 0 and 59.");
                 }
