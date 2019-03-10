@@ -1,18 +1,20 @@
-﻿using System;
-
-namespace P04.OnlineRadioDatabase
+﻿namespace P04.OnlineRadioDatabase
 {
+    using System;
+    using System.Text;
     public class Song
     {
         private string artistName;
         private string songName;
-        private string songTime;
+        private int songMinutes;
+        private int songSeconds;
 
-        public Song(string artistName, string songName, string songTime)
+        public Song(string artistName, string songName, int songMinutes, int songSeconds)
         {
             this.ArtistName = artistName;
             this.SongName = songName;
-            this.SongTime = songTime;
+            this.SongMinutes = songMinutes;
+            this.SongSeconds = songSeconds;
         }
 
         public string ArtistName
@@ -45,24 +47,37 @@ namespace P04.OnlineRadioDatabase
                 this.songName = value;
             }
         }
-        public string SongTime
+        public int SongMinutes
         {
             get
             {
-                return this.songTime;
+                return this.songMinutes;
             }
             set
             {
-                if (value[0] < 0 && value[0] > 14)
+                if (value < 0 && value > 14)
                 {
                     throw new ArgumentException("Song minutes should be between 0 and 14.");
                 }
-                if (value[1] < 0 && value[1] > 59)
+               
+                this.songMinutes = value;
+            }
+        }
+
+        public int SongSeconds
+        {
+            get
+            {
+                return this.songSeconds;
+            }
+            set
+            {
+                if (value < 0 && value > 59)
                 {
                     throw new ArgumentException("Song seconds should be between 0 and 59.");
                 }
-                this.songTime = value;
+                this.songSeconds = value;
             }
-        }
+        }       
     }
 }
