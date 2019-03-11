@@ -6,4 +6,8 @@
     <RootNamespace>P05.Mordor_sCruelPlan</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Moods\" />
+  </ItemGroup>
+
 </Project>
