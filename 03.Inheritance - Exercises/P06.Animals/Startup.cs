@@ -13,11 +13,11 @@
 
             while ((command = Console.ReadLine()) != "Beast!")
             {
-                var tokens = Console.ReadLine().Split();
+                string[] tokens = Console.ReadLine().Split();
 
-                var name = tokens[0];
-                var age = int.Parse(tokens[1]);
-                var gender = tokens[2];
+                string name = tokens[0];
+                int age = int.Parse(tokens[1]);
+                string gender = tokens[2];
 
                 try
                 {
