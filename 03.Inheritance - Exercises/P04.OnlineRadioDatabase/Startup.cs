@@ -54,6 +54,10 @@
                 {
                     Console.WriteLine(ex.Message);
                 }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine("Invalid song length.");
+                }
             }
             return songs;
         }
