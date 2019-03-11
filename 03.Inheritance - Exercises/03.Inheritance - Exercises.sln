@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03.Mankind", "P03.Mankind\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P04.OnlineRadioDatabase", "P04.OnlineRadioDatabase\P04.OnlineRadioDatabase.csproj", "{EB8087F3-BA84-44D0-82D3-2DFC7F7E2647}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05.Mordor’sCruelPlan", "P05.Mordor’sCruelPlan\P05.Mordor’sCruelPlan.csproj", "{C52A7613-3EA4-4762-9DC3-3F9CD3D603BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P05.Mordor’sCruelPlan", "P05.Mordor’sCruelPlan\P05.Mordor’sCruelPlan.csproj", "{C52A7613-3EA4-4762-9DC3-3F9CD3D603BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P06.Animals", "P06.Animals\P06.Animals.csproj", "{79C7A8A2-7D31-44D4-958B-592967050BAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{C52A7613-3EA4-4762-9DC3-3F9CD3D603BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C52A7613-3EA4-4762-9DC3-3F9CD3D603BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C52A7613-3EA4-4762-9DC3-3F9CD3D603BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79C7A8A2-7D31-44D4-958B-592967050BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79C7A8A2-7D31-44D4-958B-592967050BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79C7A8A2-7D31-44D4-958B-592967050BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79C7A8A2-7D31-44D4-958B-592967050BAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
