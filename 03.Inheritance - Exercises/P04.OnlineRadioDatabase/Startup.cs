@@ -42,7 +42,6 @@
                 {
                     int songTime = inputLine[2].IndexOf(':');
 
-
                     string artist = inputLine[0];
                     string songName = inputLine[1];
                     int songMinutes = int.Parse(inputLine[2].Substring(0, songTime));
