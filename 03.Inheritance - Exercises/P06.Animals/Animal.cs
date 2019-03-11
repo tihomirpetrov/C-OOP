@@ -24,7 +24,7 @@
             }
             set
             {
-                if (string.IsNullOrWhiteSpace(value) || value == string.Empty)
+                if (string.IsNullOrWhiteSpace(value) || string.IsNullOrEmpty(value))
                 {
                     throw new ArgumentException("Invalid input!");
                 }
@@ -56,7 +56,7 @@
             }
             set
             {
-                if (string.IsNullOrWhiteSpace(value) || value == string.Empty)
+                if (string.IsNullOrWhiteSpace(value) || string.IsNullOrEmpty(value))
                 {
                     throw new ArgumentException("Invalid input!");
 
