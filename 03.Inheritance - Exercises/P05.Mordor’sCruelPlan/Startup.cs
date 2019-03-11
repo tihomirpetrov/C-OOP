@@ -42,6 +42,8 @@
 
             int happinessFood = foodsEaten.Where(c=>c != null).Select(x =>x == null ? -1: x.Happiness).Sum();
 
+            Console.WriteLine(happinessFood);
+
             if (happinessFood < -5)
             {
 
