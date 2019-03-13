@@ -2,7 +2,9 @@
 {
     public interface ICar
     {
-        void Start();
-        void Stop();
+        string Model { get; }
+        string Color { get; }
+        string Start();
+        string Stop();
     }
 }
