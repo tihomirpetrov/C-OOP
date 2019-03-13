@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01.Shapes", "P01.Shapes\P0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02.Cars", "P02.Cars\P02.Cars.csproj", "{9E251BE6-4366-4254-A988-86F8E772F5EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02.PoinInRectangle", "..\..\..\..\Desktop\P02.PoinInRectangle\P02.PoinInRectangle.csproj", "{81DBDD8E-149E-4659-AC44-08AC153A4C20}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{9E251BE6-4366-4254-A988-86F8E772F5EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E251BE6-4366-4254-A988-86F8E772F5EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E251BE6-4366-4254-A988-86F8E772F5EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{81DBDD8E-149E-4659-AC44-08AC153A4C20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81DBDD8E-149E-4659-AC44-08AC153A4C20}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81DBDD8E-149E-4659-AC44-08AC153A4C20}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81DBDD8E-149E-4659-AC44-08AC153A4C20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
