@@ -9,7 +9,6 @@
         public static void Main()
         {
             List<IIdentifiable> allEntries = new List<IIdentifiable>();
-            //List<Robot> robots = new List<Robot>();
 
             string[] input = Console.ReadLine().Split();
 
@@ -24,17 +23,12 @@
 
                     allEntries.Add(new Citizen(name, age, id, birthdate));
                 }
-                //else if (input[0] == "Robot")
-                //{
-                //    string model = input[1];
-                //    string id = input[2];
-
-                //    robots.Add(new Robot(model, id));
-                //}
+            
                 else if (input[0] == "Pet")
                 {
                     string name = input[1];
                     string birthdate = input[2];
+                    allEntries.Add(new Pet(name, birthdate));
                 }
 
                 input = Console.ReadLine().Split();

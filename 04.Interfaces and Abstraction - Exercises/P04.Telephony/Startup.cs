@@ -10,8 +10,17 @@
             string[] phoneNumbers = Console.ReadLine().Split();
             string[] urls = Console.ReadLine().Split();
 
+            
             Smartphone smartphone = new Smartphone(phoneNumbers, urls);
-            Console.WriteLine(smartphone);
+            List<ICall> devices = new List<ICall>();
+            devices.Add(smartphone);
+
+            foreach (var item in devices)
+            {
+                Console.WriteLine(item.CallOtherNumbers());
+            }
+
+            //Console.WriteLine(smartphone);
 
         }
     }
