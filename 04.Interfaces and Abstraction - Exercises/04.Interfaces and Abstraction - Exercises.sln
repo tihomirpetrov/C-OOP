@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03.Ferrari", "P03.Ferrari\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P04.Telephony", "P04.Telephony\P04.Telephony.csproj", "{CA2F08B0-FC9D-4A7D-846B-C3E6E9AF567F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05.BorderControl", "P05.BorderControl\P05.BorderControl.csproj", "{DF2F90EF-BA06-4EAC-B4FE-2B98E97B8C75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P05.BorderControl", "P05.BorderControl\P05.BorderControl.csproj", "{DF2F90EF-BA06-4EAC-B4FE-2B98E97B8C75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
