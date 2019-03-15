@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     public class Startup
     {
@@ -28,9 +29,13 @@
 
                     allEntries.Add(new Robot(model, id));
                 }
+
+                input = Console.ReadLine().Split();
             }
 
+            string lastDigits = Console.ReadLine();
 
+            allEntries.Where(x => x.Id.ToString().EndsWith(lastDigits)).Select(x => x.Id).ToList().ForEach(Console.WriteLine);
         }
     }
 }
