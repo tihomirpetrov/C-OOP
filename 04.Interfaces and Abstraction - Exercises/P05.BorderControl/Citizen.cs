@@ -5,7 +5,7 @@
         private string name;
         private int age;
 
-        public Citizen(string name, int age, long id)
+        public Citizen(string name, int age, string id)
         {
             this.name = name;
             this.age = age;
@@ -13,7 +13,7 @@
         }
 
        
-        public long Id
+        public string Id
         {
             get; private set;
         }

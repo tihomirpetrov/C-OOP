@@ -4,13 +4,13 @@
     {
         private string model;
 
-        public Robot(string model, long id)
+        public Robot(string model, string id)
         {
             this.model = model;
             this.Id = id;
         }
 
-        public long Id
+        public string Id
         {
             get; private set;           
         }

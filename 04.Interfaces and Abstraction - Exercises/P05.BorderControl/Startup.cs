@@ -18,14 +18,14 @@
                 {
                     string name = input[0];
                     int age = int.Parse(input[1]);
-                    long id = long.Parse(input[2]);
+                    string id = input[2];
 
                     allEntries.Add(new Citizen(name, age, id));
                 }
                 else if (input.Length == 2)
                 {
                     string model = input[0];
-                    long id = long.Parse(input[1]);
+                    string id = input[1];
 
                     allEntries.Add(new Robot(model, id));
                 }
@@ -35,7 +35,7 @@
 
             string lastDigits = Console.ReadLine();
 
-            allEntries.Where(x => x.Id.ToString().EndsWith(lastDigits)).Select(x => x.Id).ToList().ForEach(Console.WriteLine);
+            allEntries.Where(x => x.Id.EndsWith(lastDigits)).Select(x => x.Id).ToList().ForEach(Console.WriteLine);
         }
     }
 }
