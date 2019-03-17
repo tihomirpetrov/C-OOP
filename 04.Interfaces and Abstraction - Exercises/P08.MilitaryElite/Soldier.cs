@@ -1,11 +1,7 @@
 ﻿namespace P08.MilitaryElite
 {
-    public class Soldier : Isoldier
+    public class Soldier : ISoldier
     {
-        private int id;
-        private string firstName;
-        private string lastName;
-
         public Soldier(int id, string firstName, string lastName)
         {
             this.Id = id;

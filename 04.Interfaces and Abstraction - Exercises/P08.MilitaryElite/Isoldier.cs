@@ -1,6 +1,6 @@
 ﻿namespace P08.MilitaryElite
 {
-    public interface Isoldier
+    public interface ISoldier
     {
         int Id { get; }
         string FirstName { get; }
