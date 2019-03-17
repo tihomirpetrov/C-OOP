@@ -2,7 +2,6 @@
 {
     public class Mission
     {
-        private string name;
         private string state;
         public Mission(string name, string state)
         {
@@ -17,7 +16,7 @@
         {
             get
             {
-                return this.State;
+                return this.state;
             }
 
             set
@@ -29,9 +28,9 @@
             }
         }
 
-        public void CorectState(string state)
+        public void CompleteMission()
         {
-            this.State = state;
+            this.state = "finished";
         }
 
         public override string ToString()
@@ -39,7 +38,7 @@
             string result = string.Empty;
             if (this.State == "inProgress")
             {
-                result = $"Code Name: {this.Name} State: {this.State}";
+                result = $"  Code Name: {this.Name} State: {this.State}";
             }
 
             return result.TrimEnd();

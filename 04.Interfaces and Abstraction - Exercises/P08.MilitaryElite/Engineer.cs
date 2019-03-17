@@ -5,11 +5,11 @@ namespace P08.MilitaryElite
 {
     public class Engineer : Private, IEngineer
     {
-        public Engineer(int id, string firstName, string lastName, decimal salary, string corps)
+        public Engineer(int id, string firstName, string lastName, decimal salary, string corps, HashSet<Repair> repairs)
             : base(id, firstName, lastName, salary)
         {
             this.Corps = corps;
-            this.Repairs = new HashSet<Repair>();
+            this.Repairs = repairs;
         }
         public HashSet<Repair> Repairs {get; private set;}
 
