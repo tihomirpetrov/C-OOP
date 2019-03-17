@@ -23,13 +23,13 @@
                 switch (typeSoldier)
                 {
                     
-                    case "Private":
+                    case "Private:":
                         salary = int.Parse(parts[4]);
                         Private currentPrivate = new Private(id, firstName, lastName, salary);
                         army.AddSoldier(currentPrivate);
                         break;
 
-                    case "LieutenantGeneral":
+                    case "LieutenantGeneral:":
                         salary = int.Parse(parts[4]);
                         int[] ids = new int[parts.Length - 4];
                         for (int i = 0; i < ids.Length; i++)
@@ -40,7 +40,14 @@
                         LieutenantGeneral lieutenantGeneral = new LieutenantGeneral(id, firstName, lastName, salary, privates);
                         break;
 
-                    case "":
+                    case "Engineer:":
+                        salary = int.Parse(parts[4]);
+                        int[] ids = new int[parts.Length - 4];
+                        for (int i = 0; i < ids.Length; i++)
+                        {
+                            ids[i] = int.Parse(parts[i + 3]);
+                        }
+
                         break;
                 }
             }
