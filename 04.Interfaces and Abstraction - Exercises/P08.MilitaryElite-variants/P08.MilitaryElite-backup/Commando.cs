@@ -24,8 +24,7 @@
             sb.Append("Missions:");
             foreach (var item in this.Missions)
             {
-                //changed to Append, instead of AppendLine
-                sb.Append($"{item.ToString()}");
+                sb.AppendLine($"{item.ToString()}");
             }
             return sb.ToString().TrimEnd();
         }

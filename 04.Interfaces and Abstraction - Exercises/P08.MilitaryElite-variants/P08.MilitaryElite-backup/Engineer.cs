@@ -5,8 +5,6 @@ namespace P08.MilitaryElite
 {
     public class Engineer : Private, IEngineer
     {
-
-
         public Engineer(int id, string firstName, string lastName, decimal salary, string corps, HashSet<Repair> repairs)
             : base(id, firstName, lastName, salary)
         {
@@ -16,7 +14,6 @@ namespace P08.MilitaryElite
         public HashSet<Repair> Repairs {get; private set;}
 
         public string Corps { get; private set; }
-
 
         public override string ToString()
         {

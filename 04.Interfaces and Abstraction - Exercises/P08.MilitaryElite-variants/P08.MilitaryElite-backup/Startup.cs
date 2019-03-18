@@ -32,12 +32,10 @@
 
                     case "LieutenantGeneral":
                         salary = decimal.Parse(parts[4]);
-                        //changed part.Length from -4, to -5
-                        int[] ids = new int[parts.Length - 5];
+                        int[] ids = new int[parts.Length - 4];
                         for (int i = 0; i < ids.Length; i++)
                         {
-                            //changed parts[i + 4], to i + 5
-                            ids[i] = int.Parse(parts[i + 5]);
+                            ids[i] = int.Parse(parts[i + 4]);
                         }
 
                         HashSet<Private> privates = army.GetPrivates(ids);
@@ -48,42 +46,37 @@
                     case "Engineer":
                         salary = decimal.Parse(parts[4]);
                         corps = parts[5];
-                        if (corps == "Marines" || corps == "Airforces")
+                        HashSet<Repair> repairs = new HashSet<Repair>();
+                        for (int i = 6; i < parts.Length; i += 2)
                         {
-                            HashSet<Repair> repairs = new HashSet<Repair>();
-                            for (int i = 6; i < parts.Length; i += 2)
+                            Repair repair = new Repair(parts[i], int.Parse(parts[i + 1]));
+                            if (repair != null)
                             {
-                                Repair repair = new Repair(parts[i], int.Parse(parts[i + 1]));
-                                if (repair != null)
-                                {
-                                    repairs.Add(repair);
-                                }
+                                repairs.Add(repair);
                             }
+                        }
 
-                            Engineer engineer = new Engineer(id, firstName, lastName, salary, corps, repairs);
-
-                            army.AddSoldier(engineer);
-                        }                  
+                        Engineer engineer = new Engineer(id, firstName, lastName, salary, corps, repairs);
+                        army.AddSoldier(engineer);
                         break;
+
                     case "Commando":
                         salary = decimal.Parse(parts[4]);
                         corps = parts[5];
-                        if (corps == "Marines" || corps == "Airforces")
+                        HashSet<Mission> missions = new HashSet<Mission>();
+                        for (int i = 6; i < parts.Length; i += 2)
                         {
-                            HashSet<Mission> missions = new HashSet<Mission>();
-                            for (int i = 6; i < parts.Length; i += 2)
+                            Mission mission = new Mission(parts[i], parts[i + 1]);
+                            if (mission != null)
                             {
-                                Mission mission = new Mission(parts[i], parts[i + 1]);
-                                if (mission != null)
-                                {
-                                    missions.Add(mission);
-                                }
+                                missions.Add(mission);
                             }
+                        }
 
-                            Commando commando = new Commando(id, firstName, lastName, salary, corps, missions);
-                            army.AddSoldier(commando);
-                        }             
+                        Commando commando = new Commando(id, firstName, lastName, salary, corps, missions);
+                        army.AddSoldier(commando);
                         break;
+
                     case "Spy":
                         int codeNumber = int.Parse(parts[4]);
                         Spy spy = new Spy(id, firstName, lastName, codeNumber);

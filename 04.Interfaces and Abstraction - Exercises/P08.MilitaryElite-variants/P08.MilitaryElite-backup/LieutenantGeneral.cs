@@ -3,28 +3,22 @@ using System.Text;
 
 namespace P08.MilitaryElite
 {
-    public class Engineer : Private, IEngineer
+    public class LieutenantGeneral : Private, ILieutenantGeneral
     {
-
-
-        public Engineer(int id, string firstName, string lastName, decimal salary, string corps, HashSet<Repair> repairs)
+        public LieutenantGeneral(int id, string firstName, string lastName, decimal salary, HashSet<Private> privates) 
             : base(id, firstName, lastName, salary)
         {
-            this.Corps = corps;
-            this.Repairs = repairs;
+            this.Privates = privates;
         }
-        public HashSet<Repair> Repairs {get; private set;}
 
-        public string Corps { get; private set; }
-
+        public HashSet<Private> Privates { get; private set; }
 
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Name: {this.FirstName} {this.LastName} Id: {this.Id} Salary: {this.Salary:F2}");
-            sb.AppendLine($"Corps: {this.Corps}");
-            sb.AppendLine("Repairs:");
-            foreach (var item in this.Repairs)
+            sb.AppendLine("Privates:");
+            foreach (var item in this.Privates)
             {
                 sb.AppendLine($"  {item.ToString()}");
             }

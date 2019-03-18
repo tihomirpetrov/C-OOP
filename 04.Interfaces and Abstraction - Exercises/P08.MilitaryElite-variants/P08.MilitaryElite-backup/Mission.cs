@@ -21,7 +21,7 @@
 
             set
             {
-                if (value == "inProgress" || value == "Finished")
+                if (value == "inProgress" || value == "finished")
                 {
                     this.state = value;
                 }
@@ -30,7 +30,7 @@
 
         public void CompleteMission()
         {
-            this.state = "Finished";
+            this.state = "finished";
         }
 
         public override string ToString()
@@ -38,13 +38,7 @@
             string result = string.Empty;
             if (this.State == "inProgress")
             {
-                //added \n for a new line
-                result = $"\n  Code Name: {this.Name} State: {this.State}";
-            }
-            // add a printing for the Finished case missions.
-            else if (this.State == "Finished")
-            {               
-                result = $"\n  Code Name: {this.Name} State: {this.State}";
+                result = $"  Code Name: {this.Name} State: {this.State}";
             }
 
             return result.TrimEnd();
