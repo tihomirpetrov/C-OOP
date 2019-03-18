@@ -1,0 +1,14 @@
+namespace MilitaryElite
+{
+    using MilitaryElite.Main;
+    using System;
+
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Engine engine = new Engine();
+            engine.Run();
+        }
+    }
+}

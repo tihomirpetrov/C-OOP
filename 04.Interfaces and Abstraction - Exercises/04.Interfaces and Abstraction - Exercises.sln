@@ -19,7 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P07.FoodShortage", "P07.Foo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P08.MilitaryElite", "P08.MilitaryElite\P08.MilitaryElite.csproj", "{8269701D-9DF2-4B9A-988A-C22CB9BF5C82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P09.CollectionHierarchy", "P09.CollectionHierarchy\P09.CollectionHierarchy.csproj", "{10EA1621-F26D-4CF4-967F-9E1CB34E381B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P09.CollectionHierarchy", "P09.CollectionHierarchy\P09.CollectionHierarchy.csproj", "{10EA1621-F26D-4CF4-967F-9E1CB34E381B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P08.MilitaryElite-2", "P08.MilitaryElite-2\P08.MilitaryElite-2.csproj", "{41F72E71-5E53-48FB-89E4-E74B4E59747F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P08.MilitaryElite-", "P08.MilitaryElite-\P08.MilitaryElite-.csproj", "{7EC9329E-26E5-4DAA-934B-7ED6A15925A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P08.MilitaryElite-1", "P08.MilitaryElite-1\P08.MilitaryElite-1.csproj", "{6B0E1223-DF7F-4DD0-8C59-7219D57083EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +69,18 @@ Global
 		{10EA1621-F26D-4CF4-967F-9E1CB34E381B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10EA1621-F26D-4CF4-967F-9E1CB34E381B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10EA1621-F26D-4CF4-967F-9E1CB34E381B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41F72E71-5E53-48FB-89E4-E74B4E59747F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F72E71-5E53-48FB-89E4-E74B4E59747F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F72E71-5E53-48FB-89E4-E74B4E59747F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F72E71-5E53-48FB-89E4-E74B4E59747F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC9329E-26E5-4DAA-934B-7ED6A15925A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC9329E-26E5-4DAA-934B-7ED6A15925A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC9329E-26E5-4DAA-934B-7ED6A15925A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC9329E-26E5-4DAA-934B-7ED6A15925A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B0E1223-DF7F-4DD0-8C59-7219D57083EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B0E1223-DF7F-4DD0-8C59-7219D57083EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B0E1223-DF7F-4DD0-8C59-7219D57083EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B0E1223-DF7F-4DD0-8C59-7219D57083EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
