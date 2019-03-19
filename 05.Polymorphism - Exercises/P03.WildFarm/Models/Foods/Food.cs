@@ -7,6 +7,6 @@
             this.Qunatity = quantity;
         }
 
-        public int Qunatity { get; set; }
+        public int Qunatity { get; private set; }
     }
 }
