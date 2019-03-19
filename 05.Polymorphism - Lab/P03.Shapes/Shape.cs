@@ -1,4 +1,4 @@
-﻿namespace P03.Shapes
+﻿namespace Shapes
 {
     public abstract class Shape
     {
