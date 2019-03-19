@@ -15,7 +15,8 @@
             Console.WriteLine(circle.CalculatePerimeter());
             Console.WriteLine(rectangle.CalculateArea());
             Console.WriteLine(rectangle.CalculatePerimeter());
-
+            Console.WriteLine(circle.Draw());
+            Console.WriteLine(rectangle.Draw());
         }
     }
 }

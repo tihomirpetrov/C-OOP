@@ -8,7 +8,7 @@
 
         public virtual string Draw()
         {
-            return "Drawing";
+            return "Drawing ";
         }
     }
 }

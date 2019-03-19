@@ -21,5 +21,10 @@
         {
             return 2 * (height + width);
         }
+
+        public override string Draw()
+        {
+            return base.Draw() + "Rectangle";
+        }
     }
 }
