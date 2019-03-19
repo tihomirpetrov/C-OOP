@@ -35,5 +35,10 @@
                 this.FoodEaten += food.Qunatity;
             }
         }
+
+        public override string ToString()
+        {
+            return $"{ this.GetType().Name} [{this.Name}";
+        }
     }
 }
