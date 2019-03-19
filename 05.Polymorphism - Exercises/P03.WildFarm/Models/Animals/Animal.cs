@@ -20,7 +20,7 @@
 
         public abstract string ProduceSound();
 
-        public abstract void Eat();
+        public abstract void Eat(Food food);
         protected void BaseEat(Food food, List<string> eatableFood, double gainValue)
         {
             string typeFood = food.GetType().Name;
