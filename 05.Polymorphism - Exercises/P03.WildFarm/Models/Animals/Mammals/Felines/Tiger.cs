@@ -16,11 +16,7 @@
         {
             this.BaseEat(food, new List<string>() { nameof(Meat) }, GainValue);
         }
-
-        private void BaseEat(Food food, List<string> list, object gainValue)
-        {
-            throw new NotImplementedException();
-        }
+               
 
         public override string ProduceSound()
         {
