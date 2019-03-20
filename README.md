@@ -11,3 +11,4 @@ C# OOP - february 2019
 04. Interfaces and Abstraction - Exercises
 05. Polymorphism - Lab
 05. Polymorphism - Exercises
+06. SOLID - Lab
