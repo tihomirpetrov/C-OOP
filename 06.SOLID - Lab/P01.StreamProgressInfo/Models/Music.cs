@@ -1,7 +1,10 @@
-﻿namespace P01.StreamProgressInfo
+﻿namespace P01.StreamProgressInfo.Models
 {
-    public class Music
+    using Interfaces;
+
+    public class Music : IStreamable
     {
+
         private string artist;
         private string album;
 

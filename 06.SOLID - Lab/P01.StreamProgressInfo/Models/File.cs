@@ -1,6 +1,8 @@
-﻿namespace P01.StreamProgressInfo
+﻿namespace P01.StreamProgressInfo.Models
 {
-    public class File
+    using Interfaces;
+
+    public class File : IStreamable
     {
         private string name;
 
