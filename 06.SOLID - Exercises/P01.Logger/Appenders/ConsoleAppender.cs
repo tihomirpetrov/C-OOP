@@ -1,6 +1,7 @@
 ﻿namespace P01.Logger.Appenders
 {
     using P01.Logger.Appenders.Contracts;
+    using P01.Logger.Layouts;
     using P01.Logger.Layouts.Contracts;
     using System;
 
@@ -10,7 +11,7 @@
 
         public ConsoleAppender(ILayout layout)
         {
-            this.layout = layout;
+            this.layout = new SimpleLayout();
         }
 
         public void Append(string dateTime, string reportLevel, string message)
