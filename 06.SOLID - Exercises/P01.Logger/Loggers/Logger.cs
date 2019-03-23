@@ -18,11 +18,13 @@
         public void Error(string dateTime, string errorMessage)
         {
             consoleAppender.Append(dateTime, "Error", errorMessage);
+            fileAppender.Append(dateTime, "Error", errorMessage);
         }
 
         public void Info(string dateTime, string infoMessage)
         {
             consoleAppender.Append(dateTime, "Info", infoMessage);
+            fileAppender.Append(dateTime, "Info", infoMessage);
         }
     }
 }
