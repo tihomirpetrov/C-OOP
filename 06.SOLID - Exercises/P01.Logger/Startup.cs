@@ -16,7 +16,10 @@
             IAppender consoleAppender = new ConsoleAppender(simpleLayout);
             consoleAppender.ReportLevel = ReportLevel.Error;
 
-            ILogger logger = new Logger(consoleAppender);
+            IAppender fileAppender = new FileAppender(simpleLayout, new LogFile());
+            fileAppender.ReportLevel = ReportLevel.Error;
+
+            ILogger logger = new Logger(consoleAppender, fileAppender);
 
             logger.Info("3/31/2015 5:33:07 PM", "Everything seems fine");
             logger.Warning("3/31/2015 5:33:07 PM", "Warning: ping is too high - disconnect imminent");
