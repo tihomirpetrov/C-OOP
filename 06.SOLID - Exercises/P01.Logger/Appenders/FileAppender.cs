@@ -3,6 +3,7 @@
     using P01.Logger.Appenders.Contracts;
     using P01.Logger.Layouts.Contracts;
     using P01.Logger.Loggers.Contracts;
+    using P01.Logger.Loggers.Enums;
     using System;
     using System.IO;
 
@@ -18,11 +19,15 @@
             this.logFile = logFile;
         }
 
-        public void Append(string dateTime, string reportLevel, string message)
+        public ReportLevel ReportLevel { get; set; }
+
+        public void Append(string dateTime, ReportLevel reportLevel, string message)
         {
             string content = string.Format(this.layout.Format, dateTime, reportLevel, message) + Environment.NewLine;
-
-            File.AppendAllText(Path, content);
+            if (this.ReportLevel <= reportLevel)
+            {
+                File.AppendAllText(Path, content);
+            }
         }
     }
 }
