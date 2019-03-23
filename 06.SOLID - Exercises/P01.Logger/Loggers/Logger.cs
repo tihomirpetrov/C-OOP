@@ -6,10 +6,13 @@
     public class Logger : ILogger
     {
         private IAppender consoleAppender;
+        private IAppender fileAppender;
 
-        public Logger(IAppender consoleAppender)
+
+        public Logger(IAppender consoleAppender, IAppender fileAppender)
         {
             this.consoleAppender = consoleAppender;
+            this.fileAppender = fileAppender;
         }
 
         public void Error(string dateTime, string errorMessage)
