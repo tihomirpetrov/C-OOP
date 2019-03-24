@@ -1,5 +1,6 @@
 ﻿namespace P01.Logger.Core
 {
+    using P01.Logger.Appenders;
     using P01.Logger.Appenders.Contracts;
     using P01.Logger.Core.Contracts;
     using P01.Logger.Loggers.Enums;
@@ -9,10 +10,12 @@
     public class CommandInterpreter : ICommandInterpreter
     {
         private ICollection<IAppender> appenders;
+        private IAppenderFactory appenderFactory;
 
         public CommandInterpreter()
         {
             this.appenders = new List<IAppender>();
+            this.appenderFactory = new AppenderFactory();
         }
 
         public void AddAppender(string[] args)
