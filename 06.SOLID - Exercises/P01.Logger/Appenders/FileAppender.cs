@@ -25,7 +25,14 @@
             {
                 File.AppendAllText(Path, content);
                 this.MessagesCount++;
+
+                logFile.Write(content);
             }
+        }
+
+        public override string ToString()
+        {
+            return $"Appender type: {this.GetType().Name}, Layout type: {this.Layout.GetType().Name}, Report level: {base.ReportLevel}, Messages appended: {MessagesCount}, File size: {this.logFile.Size}";
         }
     }
 }

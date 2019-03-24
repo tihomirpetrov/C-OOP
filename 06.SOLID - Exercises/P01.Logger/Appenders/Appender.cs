@@ -11,7 +11,7 @@
             this.Layout = layout;
         }
 
-        public int MessagesCount { get; protected set; }
+        public int MessagesCount { get; set; }
         public ILayout Layout { get; }
 
         public ReportLevel ReportLevel { get; set; }

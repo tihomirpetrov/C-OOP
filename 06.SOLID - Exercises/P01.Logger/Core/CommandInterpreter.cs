@@ -58,7 +58,10 @@
 
         public void PrintInfo()
         {
-            throw new System.NotImplementedException();
+            foreach (var ap in appenders)
+            {
+                Console.WriteLine(ap);
+            }
         }
     }
 }

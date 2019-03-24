@@ -20,6 +20,11 @@
                 Console.WriteLine(string.Format(this.Layout.Format, dateTime, reportLevel, message));
                 this.MessagesCount++;
             }
-        }      
+        }
+
+        public override string ToString()
+        {
+            return $"Appender type: {this.GetType().Name}, Layout type: {this.Layout.GetType().Name}, Report level: {base.ReportLevel}, Messages appended: {MessagesCount}";
+        }
     }
 }
