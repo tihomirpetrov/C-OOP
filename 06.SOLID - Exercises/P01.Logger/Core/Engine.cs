@@ -14,7 +14,7 @@
 
         public void Run()
         {
-            int appendersCount = int.Parse(System.Console.ReadLine());
+            int appendersCount = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < appendersCount; i++)
             {

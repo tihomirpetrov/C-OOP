@@ -7,26 +7,24 @@
     using System;
     using System.IO;
 
-    public class FileAppender : IAppender
+    public class FileAppender : Appender
     {
         private const string Path = @"..\..\..\log.txt";
-        private ILayout layout;
         private ILogFile logFile;
 
         public FileAppender(ILayout layout, ILogFile logFile)
+            : base(layout)
         {
-            this.layout = layout;
             this.logFile = logFile;
         }
 
-        public ReportLevel ReportLevel { get; set; }
-
-        public void Append(string dateTime, ReportLevel reportLevel, string message)
+        public override void Append(string dateTime, ReportLevel reportLevel, string message)
         {
-            string content = string.Format(this.layout.Format, dateTime, reportLevel, message) + Environment.NewLine;
+            string content = string.Format(this.Layout.Format, dateTime, reportLevel, message) + Environment.NewLine;
             if (this.ReportLevel <= reportLevel)
             {
                 File.AppendAllText(Path, content);
+                this.MessagesCount++;
             }
         }
     }
