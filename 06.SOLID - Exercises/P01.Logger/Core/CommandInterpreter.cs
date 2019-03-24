@@ -26,7 +26,7 @@
         {
             string typeAppender = args[0];
             string typeLayout = args[1];
-            ReportLevel reportLevel = ReportLevel.Info;
+            ReportLevel reportLevel = ReportLevel.INFO;
 
             if (args.Length == 3)
             {
@@ -37,11 +37,23 @@
 
             IAppender appender = this.appenderFactory.CreateAppender(typeAppender, layout);
 
+            appender.ReportLevel = reportLevel;
+
+            appenders.Add(appender);
         }
 
         public void AddReport(string[] args)
         {
-            throw new System.NotImplementedException();
+            string reportType = args[0];
+            string dateTime = args[1];
+            string message = args[2];
+
+            ReportLevel reportLevel = Enum.Parse<ReportLevel>(reportType);
+
+            foreach (var appender in appenders)
+            {
+                appender.Append(dateTime, reportLevel, message);
+            }
         }
 
         public void PrintInfo()
