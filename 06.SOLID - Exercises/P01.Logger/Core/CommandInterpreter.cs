@@ -3,6 +3,8 @@
     using P01.Logger.Appenders;
     using P01.Logger.Appenders.Contracts;
     using P01.Logger.Core.Contracts;
+    using P01.Logger.Layouts;
+    using P01.Logger.Layouts.Contracts;
     using P01.Logger.Loggers.Enums;
     using System;
     using System.Collections.Generic;
@@ -11,11 +13,13 @@
     {
         private ICollection<IAppender> appenders;
         private IAppenderFactory appenderFactory;
+        private ILayoutFactory layoutFactory;
 
         public CommandInterpreter()
         {
             this.appenders = new List<IAppender>();
             this.appenderFactory = new AppenderFactory();
+            this.layoutFactory = new LayoutFactory();
         }
 
         public void AddAppender(string[] args)
@@ -29,6 +33,9 @@
                 reportLevel = Enum.Parse<ReportLevel>(args[2]);
             }
 
+            ILayout layout = this.layoutFactory.CreateLayout(typeLayout);
+
+            IAppender appender = this.appenderFactory.CreateAppender(typeAppender, layout);
 
         }
 
