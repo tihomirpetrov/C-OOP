@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01.HarvestingFields", "P01.HarvestingFields\P01.HarvestingFields.csproj", "{9F284B3E-085B-40E0-B870-DC82D6B8F49A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01.HarvestingFields", "P01.HarvestingFields\P01.HarvestingFields.csproj", "{9F284B3E-085B-40E0-B870-DC82D6B8F49A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
