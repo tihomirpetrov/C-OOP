@@ -1,28 +1,24 @@
-﻿namespace P03.MissionPrivateImpossible
+﻿using System;
+using System.Reflection;
+using System.Text;
+
+public class Spy
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Reflection;
-    using System.Text;
 
-    public class Spy
+    public string RevealPrivateMethods(string investigatedClass)
     {
+        Type classType = Type.GetType(investigatedClass);
+        MethodInfo[] classMethods = classType.GetMethods(BindingFlags.Instance | BindingFlags.NonPublic);
+        StringBuilder sb = new StringBuilder();
 
-        public string RevealPrivateMethods()
+        sb.AppendLine($"All Private Methods of Class: {investigatedClass}");
+        sb.AppendLine($"Base Class: {classType.BaseType.Name}");
+
+        foreach (MethodInfo method in classMethods)
         {
-            Type classType = Type.GetType(investigatedClass);
-            MethodInfo[] classMethods = classType.GetMethods(BindingFlags.Instance | BindingFlags.NonPublic);
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendLine($"All Private Methods of Class: {investigatedClass}");
-            sb.AppendLine($"Base Class: {classType.BaseType.Name}");
-
-            foreach (MethodInfo method in classMethods)
-            {
-                sb.AppendLine(method.Name);
-            }
-
-            return sb.ToString();
+            sb.AppendLine(method.Name);
         }
+
+        return sb.ToString().TrimEnd();
     }
 }
