@@ -1,14 +1,11 @@
-﻿namespace P02.HighQualityMistakes
-{
-    using System;
+﻿using System;
 
-    public class Startup
+public class Startup
+{
+    public static void Main()
     {
-        public static void Main()
-        {
-            Spy spy = new Spy();
-            string result = spy.AnalyzeAcessModifiers("Hacker");
-            Console.WriteLine(result);
-        }
+        Spy spy = new Spy();
+        string result = spy.AnalyzeAcessModifiers("Hacker");
+        Console.WriteLine(result);
     }
 }
