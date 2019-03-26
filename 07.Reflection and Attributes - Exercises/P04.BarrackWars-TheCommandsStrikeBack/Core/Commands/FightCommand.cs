@@ -5,7 +5,7 @@
 
     public class FightCommand : Command
     {
-        public FightCommand(string[] data) : base(data)
+        public FightCommand(string[] data, IRepository repository, IUnitFactory unitFactory) : base(data, repository, unitFactory)
         {
         }
 

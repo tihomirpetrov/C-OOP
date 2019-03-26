@@ -6,7 +6,7 @@
     {
         private IRepository repository;
 
-        public ReportCommand(string[] data) : base(data)
+        public ReportCommand(string[] data, IRepository repository, IUnitFactory unitFactory) : base(data, repository, unitFactory)
         {
         }
 

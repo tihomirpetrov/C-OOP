@@ -35,7 +35,7 @@
                 throw new InvalidOperationException("Invalid command!");
             }
 
-            IExecutable command = (IExecutable)Activator.CreateInstance(commandType, new[] { data });
+            IExecutable command = (IExecutable)Activator.CreateInstance(commandType, new Object[] { data, this.repository, this.unitFactory });
 
             this.InjectDependancies(command);
             return command;
