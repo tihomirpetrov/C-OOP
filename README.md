@@ -12,3 +12,6 @@ C# OOP - february 2019
 05. Polymorphism - Lab
 05. Polymorphism - Exercises
 06. SOLID - Lab
+06. SOLID - Exercises
+07. Reflection and Attributes - Lab
+07. Reflection and Attributes - Exercises
