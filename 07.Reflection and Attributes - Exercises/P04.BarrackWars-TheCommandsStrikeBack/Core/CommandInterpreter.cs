@@ -7,6 +7,15 @@
 
     public class CommandInterpreter : ICommandInterpreter
     {
+        private IRepository repository;
+        private IUnitFactory unitFactory;
+
+        public CommandInterpreter(IRepository repository, IUnitFactory unitFactory)
+        {
+            this.repository = repository;
+            this.unitFactory = unitFactory;
+        }
+
         public IExecutable InterpretCommand(string[] data, string commandName)
         {
             throw new NotImplementedException();
