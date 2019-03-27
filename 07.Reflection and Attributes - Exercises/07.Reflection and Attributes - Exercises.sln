@@ -5,11 +5,13 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01.HarvestingFields", "P01.HarvestingFields\P01.HarvestingFields.csproj", "{9F284B3E-085B-40E0-B870-DC82D6B8F49A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02.BlackBoxInteger", "P02.BlackBoxInteger\P02.BlackBoxInteger.csproj", "{31741AA6-B831-4E9D-9020-1B8E7823F984}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02.BlackBoxInteger", "P02.BlackBoxInteger\P02.BlackBoxInteger.csproj", "{31741AA6-B831-4E9D-9020-1B8E7823F984}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03.BarrackWars-ANewFactory", "P03.BarrackWars-ANewFactory\P03.BarrackWars-ANewFactory.csproj", "{B8AE06DF-0991-4B2C-9319-F3F1080F7A69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03.BarrackWars-ANewFactory", "P03.BarrackWars-ANewFactory\P03.BarrackWars-ANewFactory.csproj", "{B8AE06DF-0991-4B2C-9319-F3F1080F7A69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04.BarrackWars-TheCommandsStrikeBack", "P04.BarrackWars-TheCommandsStrikeBack\P04.BarrackWars-TheCommandsStrikeBack.csproj", "{7D026679-1094-4492-BDC7-9CAC63FD997B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P04.BarrackWars-TheCommandsStrikeBack", "P04.BarrackWars-TheCommandsStrikeBack\P04.BarrackWars-TheCommandsStrikeBack.csproj", "{7D026679-1094-4492-BDC7-9CAC63FD997B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05.BarrackWars-ReturnOfTheDependencies", "P05.BarrackWars-ReturnOfTheDependencies\P05.BarrackWars-ReturnOfTheDependencies.csproj", "{63F9292D-5C70-448F-B366-F392CD7CC476}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7D026679-1094-4492-BDC7-9CAC63FD997B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D026679-1094-4492-BDC7-9CAC63FD997B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D026679-1094-4492-BDC7-9CAC63FD997B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63F9292D-5C70-448F-B366-F392CD7CC476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63F9292D-5C70-448F-B366-F392CD7CC476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63F9292D-5C70-448F-B366-F392CD7CC476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63F9292D-5C70-448F-B366-F392CD7CC476}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
