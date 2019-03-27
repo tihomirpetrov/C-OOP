@@ -5,4 +5,11 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Core\Commands\" />
+    <Folder Include="Core\Factories\" />
+    <Folder Include="Models\Gems\" />
+    <Folder Include="Data\" />
+  </ItemGroup>
+
 </Project>
