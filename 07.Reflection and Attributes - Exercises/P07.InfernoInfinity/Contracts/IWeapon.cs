@@ -10,7 +10,7 @@
         int Strength { get; }
         int Agility { get; }
         int Vitality { get; }
-        WeaponRarity Rarity { get; set; }
+        WeaponRarity Rarity { get; }
 
         void Modify(IGem gem);
         void DegradeWeapon(IGem gem);

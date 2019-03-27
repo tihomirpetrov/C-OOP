@@ -3,7 +3,7 @@
     using P07.InfernoInfinity.Models.Enums;
     public interface IGem
     {
-        int StreangthModifier { get; }
+        int StrengthModifier { get; }
         int AgilityModifier { get; }
         int VitalityModifier { get; }
         GemQuality Quality { get; }
