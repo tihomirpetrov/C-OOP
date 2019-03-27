@@ -12,7 +12,7 @@
 
         public override string Execute()
         {
-            return this.repository.Statistics;
+            return this.Repository.Statistics;
         }
     }
 }
