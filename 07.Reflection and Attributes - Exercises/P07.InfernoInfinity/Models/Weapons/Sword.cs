@@ -1,12 +1,7 @@
-﻿namespace P07.InfernoInfinity.Weapons
+﻿public class Sword : Weapon
 {
-    using P07.InfernoInfinity.Contracts;
-    using P07.InfernoInfinity.Models.Enums;
-    public class Sword : Weapon
+    public Sword(WeaponRarity rarity, string name) 
+        : base(rarity, name, 4, 6, 3)
     {
-        public Sword(WeaponRarity rarity, string name) : base(4, 6, rarity, name)
-        {
-            this.Gems = new IGem[3];
-        }
     }
 }

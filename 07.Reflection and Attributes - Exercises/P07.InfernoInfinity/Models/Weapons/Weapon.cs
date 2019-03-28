@@ -1,57 +1,85 @@
-﻿namespace P07.InfernoInfinity.Weapons
+﻿using System.Collections.Generic;
+using System.Linq;
+
+public class Weapon : IWeapon, IRareWeapon
 {
-    using P07.InfernoInfinity.Contracts;
-    using P07.InfernoInfinity.Models.Enums;
+    IGem[] slots;
 
-    public abstract class Weapon : IWeapon
+    protected Weapon(WeaponRarity rarity, string name, int baseMinDamage, int baseMaxDamage, int slots)
     {
-        protected Weapon(int minDamage, int maxDamage, WeaponRarity rarity, string name)
+        this.Rarity = rarity;
+        this.Name = name;
+        this.BaseMinDamage = baseMinDamage;
+        this.BaseMaxDamage = baseMaxDamage;
+        this.slots = new IGem[slots];
+    }
+
+    public string Name { get; private set; }
+
+    public WeaponRarity Rarity { get; private set; }
+
+    public int MinDamage
+    {
+        get
         {
-            this.Rarity = rarity;
-            this.MinDamage = minDamage * (int)this.Rarity;
-            this.MaxDamage = maxDamage * (int)this.Rarity;
-            this.Name = name;
+            return this.BaseMinDamage * (int)Rarity + this.Slots
+                .Where(g => g != null)
+                .Sum(g => g.Strength * 2 + g.Agility);
         }
+    }
 
-        public string Name { get; protected set; }
-
-        public int MinDamage { get; protected set; }
-
-        public int MaxDamage { get; protected set; }
-
-        public IGem[] Gems { get; protected set; }
-
-        public int Strength { get; protected set; }
-
-        public int Agility { get; protected set; }
-
-        public int Vitality { get; private set; }
-
-        public WeaponRarity Rarity { get; protected set; }
-
-        public void DegradeWeapon(IGem gem)
+    public int MaxDamage
+    {
+        get
         {
-            this.Strength += gem.StrengthModifier;
-            this.Agility += gem.AgilityModifier;
-            this.Vitality += gem.VitalityModifier;
-
-            this.MinDamage += (gem.StrengthModifier * 2) + gem.AgilityModifier;
-            this.MaxDamage += (gem.StrengthModifier * 3) + (gem.AgilityModifier * 4);
+            return this.BaseMaxDamage * (int)Rarity + this.Slots
+                .Where(g => g != null)
+                .Sum(g => g.Strength * 3 + g.Agility * 4);
         }
+    }
 
-        public void Modify(IGem gem)
+    public int BaseMinDamage { get; private set; }
+
+    public int BaseMaxDamage { get; private set; }
+
+    public IReadOnlyCollection<IGem> Slots
+    {
+        get
         {
-            this.MinDamage -= (gem.StrengthModifier * 2) + gem.AgilityModifier;
-            this.MaxDamage -= (gem.StrengthModifier * 3) + (gem.AgilityModifier * 4);
-
-            this.Strength -= gem.StrengthModifier;
-            this.Agility -= gem.AgilityModifier;
-            this.Vitality -= gem.VitalityModifier;
+            return this.slots;
         }
+    }
 
-        public override string ToString()
+    public void AddGem(int index, IGem gem)
+    {
+        if (index >= 0 && index < this.Slots.Count)
         {
-            return $"{this.Name}: {this.MinDamage}-{this.MaxDamage} Damage, +{this.Strength} Strength, +{this.Agility} Agility, +{this.Vitality} Vitality";
+            this.slots[index] = gem;
         }
+    }
+
+    public void RemoveGem(int index)
+    {
+        if (index >= 0 && index < this.Slots.Count)
+        {
+            this.slots[index] = null;
+        }
+    }
+
+    public override string ToString()
+    {
+        int strength = this.Slots
+            .Where(g => g != null)
+            .Sum(g => g.Strength);
+
+        int agility = this.Slots
+            .Where(g => g != null)
+            .Sum(g => g.Agility);
+
+        int vitality = this.Slots
+            .Where(g => g != null)
+            .Sum(g => g.Vitality);
+
+        return $"{this.Name}: {this.MinDamage}-{this.MaxDamage} Damage, +{strength} Strength, +{agility} Agility, +{vitality} Vitality";
     }
 }

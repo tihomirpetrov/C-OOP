@@ -1,10 +1,7 @@
-﻿namespace P07.InfernoInfinity.Models.Gems
+﻿public class Emerald : Gem
 {
-    using P07.InfernoInfinity.Models.Enums;
-    public class Emerald : Gem
+    public Emerald(GemClarity clarity) 
+        : base(clarity, 1, 4, 9)
     {
-        public Emerald(GemQuality quality) : base(quality, 1, 4, 9)
-        {
-        }
     }
 }
