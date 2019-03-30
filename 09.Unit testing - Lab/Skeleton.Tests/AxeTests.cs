@@ -6,6 +6,7 @@
     [TestFixture]
     public class AxeTests
     {
+        [Test]
         public void AxeLooseDurabilityAfterAttack()
         {
             Axe axe = new Axe(10, 10);
