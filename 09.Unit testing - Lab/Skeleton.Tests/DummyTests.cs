@@ -21,5 +21,16 @@
 
             Assert.That(() => dummy.TakeAttack(5), Throws.InvalidOperationException.With.Message.EqualTo("Dummy is dead."));
         }
+
+        [Test]
+        public void DeadDummyGiveExpirience()
+        {
+            Hero hero = new Hero("Ivan");
+            Dummy dummy = new Dummy(10, 50);
+
+            hero.Attack(dummy);
+
+            Assert.That(hero.Experience, Is.EqualTo(50));
+        }
     }
 }
