@@ -32,5 +32,16 @@
 
             Assert.That(hero.Experience, Is.EqualTo(50));
         }
+
+        [Test]
+        public void AliveDummyCannotGiveExperience()
+        {
+            Hero hero = new Hero("Ivan");
+            Dummy dummy = new Dummy(20, 50);
+
+            hero.Attack(dummy);
+
+            Assert.That(hero.Experience, Is.EqualTo(0));
+        }
     }
 }
