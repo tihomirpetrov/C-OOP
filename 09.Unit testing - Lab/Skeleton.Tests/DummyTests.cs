@@ -1,10 +1,22 @@
 ﻿namespace Skeleton.Tests
 {
     using NUnit.Framework;
+    using System;
 
     [TestFixture]
     public class DummyTests
     {
+        private Dummy dummy;
+        private int AttackPoints = 10;
+        private int DummyHealth = 10;
+        private int DummyExperience = 10;
+
+        [SetUp]
+        public void TestInit()
+        {
+            this.dummy = new Dummy(DummyHealth, DummyExperience);
+        }
+
         [Test]
         public void DummyLoosesHealthIfAttacked()
         {
@@ -25,23 +37,21 @@
         [Test]
         public void DeadDummyGiveExpirience()
         {
-            Hero hero = new Hero("Ivan");
-            Dummy dummy = new Dummy(10, 50);
+            while (!this.dummy.IsDead())
+            {
+                this.dummy.TakeAttack(AttackPoints);
+            }
 
-            hero.Attack(dummy);
+            int gotExperience = this.dummy.GiveExperience();
 
-            Assert.That(hero.Experience, Is.EqualTo(50));
+            Assert.AreEqual(10, gotExperience, "Dead dummy doesn't give experience.");
         }
 
         [Test]
         public void AliveDummyCannotGiveExperience()
         {
-            Hero hero = new Hero("Ivan");
-            Dummy dummy = new Dummy(20, 50);
-
-            hero.Attack(dummy);
-
-            Assert.That(hero.Experience, Is.EqualTo(0));
+            Exception ex = Assert.Throws<InvalidOperationException>(() => this.dummy.GiveExperience());
+            Assert.That(ex.Message, Is.EqualTo("Target is not dead."));
         }
     }
 }
