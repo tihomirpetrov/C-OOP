@@ -13,6 +13,8 @@
             Dummy dummy = new Dummy(10, 10);
 
             axe.Attack(dummy);
+            Assert.AreEqual(10, axe.AttackPoints);
+            Assert.AreEqual(9, axe.DurabilityPoints);
             Assert.That(axe.DurabilityPoints, Is.EqualTo(9), "Axe Durability doesn't change after attack.");
         }
     }
