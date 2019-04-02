@@ -18,14 +18,24 @@
             this.numbers = database.Length;
         }
 
-        public void Add()
+        public void Add(int number)
         {
+            if (database.Length == 16)
+            {
+                throw new InvalidOperationException();
+            }
 
+            this.database[numbers++] = number;
         }
 
-        public void Remove()
+        public int Remove()
         {
+            if (database.Length == 0)
+            {
+                throw new InvalidOperationException();
+            }
 
+            return this.database[--numbers];
         }
 
         public int[] Fetch()
