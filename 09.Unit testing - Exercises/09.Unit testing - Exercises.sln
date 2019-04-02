@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomLinkedList", "CustomLinkedList\CustomLinkedList.csproj", "{C5CA83BE-83C3-4036-8EA5-B8859EF9A417}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StorageMaster", "StorageMaster\StorageMaster.csproj", "{C86D2D54-492E-4C3D-ADAC-26F77E8946D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5CA83BE-83C3-4036-8EA5-B8859EF9A417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5CA83BE-83C3-4036-8EA5-B8859EF9A417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5CA83BE-83C3-4036-8EA5-B8859EF9A417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5CA83BE-83C3-4036-8EA5-B8859EF9A417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C86D2D54-492E-4C3D-ADAC-26F77E8946D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C86D2D54-492E-4C3D-ADAC-26F77E8946D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C86D2D54-492E-4C3D-ADAC-26F77E8946D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C86D2D54-492E-4C3D-ADAC-26F77E8946D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DD2F844-41EA-463A-A9B1-EF85D52320F7}
+	EndGlobalSection
+EndGlobal
