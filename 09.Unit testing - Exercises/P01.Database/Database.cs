@@ -5,45 +5,61 @@
 
     public class Database
     {
-        private int[] database;
-        private int numbers;
+        private const int Capacity = 16;
 
-        public Database(params int[] data)
+        private int[] data;
+        private int count;
+
+        public Database()
         {
-            if (data.Length > 16)
+            this.data = new int[Capacity];
+        }
+
+        public Database(params int[] numbers) 
+            : this()
+
+        {
+            if (numbers != null)
             {
-                throw new InvalidOperationException();
-            }
-
-            this.database = new int[16];
-            this.numbers = data.Length;
-
-            Array.Copy(data, database, data.Length);
+                foreach (var item in numbers)
+                {
+                    this.Add(item);
+                }
+            }            
+        }
+        
+        public int Count
+        {
+            get
+            {
+                return this.count;
+            }            
         }
 
         public void Add(int number)
         {
-            if (database.Length == 16)
+            if (this.count == this.data.Length)
             {
                 throw new InvalidOperationException();
             }
 
-            this.database[numbers++] = number;
+            data[this.count] = number;
+            this.count++;
         }
 
-        public int Remove()
+        public void Remove()
         {
-            if (database.Length == 0)
+            if (this.count == 0)
             {
                 throw new InvalidOperationException();
             }
 
-            return this.database[--numbers];
+            this.count--;
         }
 
         public int[] Fetch()
         {
-            return this.database.Take(numbers).ToArray();
+            return this.data.Take(count).ToArray();
         }
     }
 }
