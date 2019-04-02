@@ -1,21 +1,24 @@
 ﻿namespace P01.Database
 {
     using System;
+    using System.Linq;
 
     public class Database
     {
         private int[] database;
         private int numbers;
 
-        public Database(int[] database)
+        public Database(params int[] data)
         {
-            if (database.Length > 16)
+            if (data.Length > 16)
             {
                 throw new InvalidOperationException();
             }
 
             this.database = new int[16];
-            this.numbers = database.Length;
+            this.numbers = data.Length;
+
+            Array.Copy(data, database, data.Length);
         }
 
         public void Add(int number)
@@ -40,7 +43,7 @@
 
         public int[] Fetch()
         {
-            return null;
+            return this.database.Take(numbers).ToArray();
         }
     }
 }
