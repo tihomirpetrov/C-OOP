@@ -1,0 +1,72 @@
+namespace Database.Tests
+{
+    using NUnit.Framework;
+    using System;
+    using System.Linq;
+
+    public class Tests
+    {
+        private Database database;
+
+        [SetUp]
+        public void Setup()
+        {
+            this.database = new Database(1, 2, 3, 4, 5, 6);
+        }
+
+        [Test]
+        public void AddMethodShouldThrowExceptionWithInvalidParameter()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                this.database.Add(45);
+            }
+
+            Assert.Throws<InvalidOperationException>(() => this.database.Add(458));
+        }
+
+        [Test]
+        public void AddMethodShouldWorkCorrectly()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                this.database.Add(45);
+            }
+
+            Assert.That(11, Is.EqualTo(this.database.DatabaseElements.Length));
+        }
+
+        [Test]
+        public void RemoveMethodShouldThrowExceptionWithEmptyDatabase()
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                this.database.Remove();
+            }
+
+            Assert.Throws<InvalidOperationException>(() => this.database.Remove());
+        }
+
+        [Test]
+        public void RemoveMethodShouldRemoveOneElement()
+        {
+            this.database.Remove();
+
+            Assert.That(5, Is.EqualTo(this.database.DatabaseElements.Length));
+        }
+
+        [Test]
+        public void ConstructorShouldInitializeCorrectly()
+        {
+            this.database = new Database(1, 2, 3, 5);
+
+            Assert.That(4, Is.EqualTo(this.database.DatabaseElements.Length));
+        }
+
+        [Test]
+        public void ConstructorShouldThrowException()
+        {
+            Assert.Throws<InvalidOperationException>(() => this.database = new Database());
+        }
+    }
+}
