@@ -2,6 +2,7 @@ namespace Database.Tests
 {
     using NUnit.Framework;
     using System;
+    using System.Collections.Generic;
     using System.Linq;
 
     public class Tests
@@ -64,9 +65,25 @@ namespace Database.Tests
         }
 
         [Test]
-        public void ConstructorShouldThrowException()
+        [TestCase()]
+        [TestCase(1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9)]
+        public void ConstructorShouldThrowException(params int[] collection)
         {
-            Assert.Throws<InvalidOperationException>(() => this.database = new Database());
+            Assert.Throws<InvalidOperationException>(() => this.database = new Database(collection));
+        }
+
+        [Test]
+        public void PropertyDatabaseElementsShouldSetCorrectly()
+        {
+            var collection = new List<int>() { 1, 2, 3, 4, 5, 6 };
+            CollectionAssert.AreEqual(collection, this.database.DatabaseElements);
+        }
+
+        [Test]
+        public void PropertyDatabaseElementsShouldGetCorrectly()
+        {
+            int expectedCount = 6;
+            Assert.That(expectedCount, Is.EqualTo(this.database.DatabaseElements.Length));
         }
     }
 }
