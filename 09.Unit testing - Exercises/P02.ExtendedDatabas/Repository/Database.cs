@@ -33,7 +33,7 @@
                 return this.people.Count;
             }
         }
-        private void Add(IPerson person)
+        public void Add(IPerson person)
         {
             if (this.people.Any(x =>x.Id == person.Id || x.Username == person.Username))
             {
@@ -42,5 +42,12 @@
 
             this.people.Add(person);
         }
+
+        public void Remove(IPerson person)
+        {
+            this.people.RemoveWhere(x => x.Id == person.Id && x.Username == person.Username);
+        }
+
+
     }
 }
