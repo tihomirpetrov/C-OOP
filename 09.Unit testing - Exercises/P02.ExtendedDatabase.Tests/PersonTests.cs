@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace P02.ExtendedDatabase.Tests
+﻿namespace P02.ExtendedDatabase.Tests
 {
+    using NUnit.Framework;
+
+    [TestFixture]
     public class PersonTests
     {
     }
