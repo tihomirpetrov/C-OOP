@@ -1,6 +1,6 @@
-﻿namespace P02.ExtendedDatabas.Repository
+﻿namespace P02.ExtendedDatabase.Repository
 {
-    using P02.ExtendedDatabas.Interfaces;
+    using P02.ExtendedDatabase.Interfaces;
     using System;
     using System.Collections.Generic;
     using System.Linq;

@@ -1,4 +1,4 @@
-﻿namespace P02.ExtendedDatabas.Interfaces
+﻿namespace P02.ExtendedDatabase.Interfaces
 {
     public interface IPerson : IIdentifiable
     {

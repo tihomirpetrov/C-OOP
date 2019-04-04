@@ -1,6 +1,6 @@
-﻿namespace P02.ExtendedDatabas.Models
+﻿namespace P02.ExtendedDatabase.Models
 {
-    using P02.ExtendedDatabas.Interfaces;
+    using P02.ExtendedDatabase.Interfaces;
     public class Person : IPerson
     {
         public Person(long id, string username)

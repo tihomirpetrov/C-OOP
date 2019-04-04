@@ -1,11 +1,11 @@
-﻿namespace P02.ExtendedDatabase
+﻿namespace P02.ExtendedDatabase.Tests
 {
     using System;
-    public class Startup
+    public class Program
     {
         public static void Main()
         {
-            
+           
         }
     }
 }
