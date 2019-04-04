@@ -48,9 +48,9 @@
             this.people.RemoveWhere(x => x.Id == person.Id && x.Username == person.Username);
         }
 
-        public IPerson Find(long Id)
+        public IPerson Find(long id)
         {
-            if (Id < 0)
+            if (id < 0)
             {
                 throw new ArgumentOutOfRangeException();
             }

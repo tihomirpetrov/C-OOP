@@ -1,6 +1,5 @@
 ﻿namespace P02.ExtendedDatabase.Tests
 {
-    using System;
     using NUnit.Framework;
     using P02.ExtendedDatabase.Interfaces;
     using P02.ExtendedDatabase.Models;
@@ -26,7 +25,20 @@
 
             this.database = new Database(collectionOfPeople);
 
-            Assert.AreEqual();
+            Assert.AreEqual(2, this.database.Count, $"Constructor doesn't work with {typeof(IPerson)} as parameter");
+        }
+
+        [Test]
+        public void DatabaseInitializeConstructorWithNullLeadsToEmptyDB()
+        {
+            Assert.DoesNotThrow(() => this.database = new Database(null));
+        }
+
+        [Test]
+        public void DatabaseAddPerson()
+        {
+
+
         }
     }
 }
