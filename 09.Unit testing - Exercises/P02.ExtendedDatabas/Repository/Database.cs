@@ -64,5 +64,22 @@
 
             return personFound;
         }
+
+        public IPerson Find(string username)
+        {
+            if (username == null)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            var personFound = this.people.FirstOrDefault(x => x.Username == username);
+
+            if (personFound == null)
+            {
+                throw new InvalidOperationException();
+            }
+
+            return personFound;
+        }
     }
 }
