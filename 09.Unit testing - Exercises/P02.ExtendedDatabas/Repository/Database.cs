@@ -48,6 +48,21 @@
             this.people.RemoveWhere(x => x.Id == person.Id && x.Username == person.Username);
         }
 
+        public IPerson Find(long Id)
+        {
+            if (Id < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
 
+            var personFound = this.people.FirstOrDefault(x => x.Id == id);
+
+            if (personFound == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            return personFound;
+        }
     }
 }
