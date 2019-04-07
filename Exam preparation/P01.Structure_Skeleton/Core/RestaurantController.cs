@@ -48,7 +48,16 @@
 
         public string ReserveTable(int numberOfPeople)
         {
-            throw new NotImplementedException();
+            ITable table = this.tables.Where(x => x.Capacity >= numberOfPeople).FirstOrDefault();
+            
+            if (table == null)
+            {
+                return $"No available table for {numberOfPeople} people";
+            }
+            else
+            {
+                return $"Table {table.TableNumber} has been reserved for {numberOfPeople} people";
+            }
         }
 
         public string OrderFood(int tableNumber, string foodName)
