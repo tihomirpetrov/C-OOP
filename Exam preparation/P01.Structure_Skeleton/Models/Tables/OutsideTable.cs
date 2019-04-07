@@ -5,8 +5,8 @@
     {
         private const decimal PricePerPersonOutsideTable = 3.50M;
 
-        public OutsideTable(int tableNumber, int capacity, decimal pricePerPerson = PricePerPersonOutsideTable) 
-            : base(tableNumber, capacity, pricePerPerson)
+        public OutsideTable(int tableNumber, int capacity)
+           : base(tableNumber, capacity, PricePerPersonOutsideTable)
         {
         }
     }
