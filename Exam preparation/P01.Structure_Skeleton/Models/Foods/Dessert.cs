@@ -4,8 +4,8 @@
     public class Dessert : Food, IFood
     {
         public const int servingSizeInitial = 200;
-        public Dessert(string name, decimal price, int servingSize = servingSizeInitial)
-            : base(name, price, servingSize)
+        public Dessert(string name, decimal price)
+            : base(name, servingSizeInitial, price)
         {            
         }
     }

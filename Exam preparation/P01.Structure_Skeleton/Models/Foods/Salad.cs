@@ -5,8 +5,8 @@
     {
         public const int servingSizeInitial = 300;
 
-        public Salad(string name, decimal price, int servingSize = servingSizeInitial) 
-            : base(name, price, servingSize)
+        public Salad(string name, decimal price)
+            : base(name, servingSizeInitial, price)
         {
         }
     }

@@ -5,8 +5,8 @@
     {
         public const int servingSizeInitial = 500;
 
-        public MainCourse(string name, decimal price, int servingSize = servingSizeInitial)
-            : base(name, price, servingSize)
+        public MainCourse(string name, decimal price)
+            : base(name, servingSizeInitial, price)
         {
         }
     }

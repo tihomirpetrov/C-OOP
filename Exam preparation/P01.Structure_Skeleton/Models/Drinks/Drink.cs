@@ -24,7 +24,7 @@
             {
                 return this.name;
             }
-            set
+            private set
             {
                 if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
                 {
@@ -40,7 +40,7 @@
             {
                 return this.servingSize;
             }
-            set
+            private set
             {
                 if (value <= 0)
                 {
@@ -55,7 +55,7 @@
             {
                 return this.price;
             }
-            set
+            private set
             {
                 if (value <= 0)
                 {
@@ -71,14 +71,19 @@
             {
                 return this.brand;
             }
-            set
+            private set
             {
                 if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Name cannot be null or white space!");
+                    throw new ArgumentException("Brand cannot be null or white space!");
                 }
                 this.brand = value;
             }
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Name} {this.Brand} - {this.ServingSize}ml - {this.Price:f2}lv";
         }
     }
 }

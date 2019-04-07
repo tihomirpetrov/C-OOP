@@ -8,7 +8,7 @@
         private int servingSize;
         private decimal price;
 
-        public Food(string name, decimal price, int servingSize)
+        public Food(string name, int servingSize, decimal price)
         {
             this.Name = name;
             this.ServingSize = servingSize;
@@ -21,7 +21,7 @@
             {
                 return this.name;
             }
-            set
+            private set
             {
                 if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
                 {
@@ -37,7 +37,7 @@
             {
                 return this.servingSize;
             }
-            set
+            private set
             {
                 if (value <= 0)
                 {
@@ -53,7 +53,7 @@
             {
                 return this.price;
             }
-            set
+            private set
             {
                 if (value <= 0)
                 {

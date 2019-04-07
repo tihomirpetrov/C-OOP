@@ -5,8 +5,8 @@
     {
         public const int servingSizeInitial = 245;
 
-        public Soup(string name, decimal price, int servingSize = servingSizeInitial) 
-            : base(name, price, servingSize)
+        public Soup(string name, decimal price)
+            : base(name, servingSizeInitial, price)
         {
         }
     }

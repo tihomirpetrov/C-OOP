@@ -1,0 +1,13 @@
+﻿namespace SoftUniRestaurant.Models.Tables
+{
+    using SoftUniRestaurant.Models.Tables.Contracts;
+    public class InsideTable : Table, ITable
+    {
+        private const decimal PricePerPersonInsideTable = 2.50M;
+
+        public InsideTable(int tableNumber, int capacity, decimal pricePerPerson = PricePerPersonInsideTable)
+            : base(tableNumber, capacity, pricePerPerson)
+        {
+        }
+    }
+}
