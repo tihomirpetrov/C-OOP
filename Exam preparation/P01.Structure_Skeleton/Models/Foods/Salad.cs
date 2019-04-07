@@ -3,10 +3,11 @@
     using SoftUniRestaurant.Models.Foods.Contracts;
     public class Salad : Food, IFood
     {
-        public Salad(string name, int servingSize, decimal price) 
-            : base(name, servingSize, price)
+        public const int servingSizeInitial = 300;
+
+        public Salad(string name, decimal price, int servingSize = servingSizeInitial) 
+            : base(name, price, servingSize)
         {
-            this.ServingSize = 300;
         }
     }
 }

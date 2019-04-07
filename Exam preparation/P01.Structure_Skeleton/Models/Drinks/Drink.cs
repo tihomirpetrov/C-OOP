@@ -1,18 +1,21 @@
-﻿namespace SoftUniRestaurant.Models.Foods
+﻿namespace SoftUniRestaurant.Models.Drinks
 {
-    using SoftUniRestaurant.Models.Foods.Contracts;
+    using SoftUniRestaurant.Models.Drinks.Contracts;
     using System;
-    public abstract class Food : IFood
+
+    public abstract class Drink : IDrink
     {
         private string name;
         private int servingSize;
         private decimal price;
+        private string brand;
 
-        public Food(string name, decimal price, int servingSize)
+        public Drink(string name, int servingSize, decimal price, string brand)
         {
             this.Name = name;
             this.ServingSize = servingSize;
             this.Price = price;
+            this.Brand = brand;
         }
 
         public string Name
@@ -46,7 +49,6 @@
                 this.servingSize = value;
             }
         }
-
         public decimal Price
         {
             get
@@ -63,9 +65,20 @@
             }
         }
 
-        public override string ToString()
+        public string Brand
         {
-            return $"{this.Name}: {this.ServingSize}g - {this.Price:f2}";
+            get
+            {
+                return this.brand;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Name cannot be null or white space!");
+                }
+                this.brand = value;
+            }
         }
     }
 }

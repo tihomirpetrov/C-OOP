@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SoftUniRestaurant.Models.Foods
+﻿namespace SoftUniRestaurant.Models.Foods
 {
-    class Soup
+    using SoftUniRestaurant.Models.Foods.Contracts;
+    public class Soup : Food, IFood
     {
+        public const int servingSizeInitial = 245;
+
+        public Soup(string name, decimal price, int servingSize = servingSizeInitial) 
+            : base(name, price, servingSize)
+        {
+        }
     }
 }
