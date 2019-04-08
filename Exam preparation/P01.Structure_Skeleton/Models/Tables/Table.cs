@@ -50,7 +50,7 @@
             {
                 return this.numberOfPeople;
             }
-            private set
+            set
             {
                 if (value <= 0)
                 {
@@ -70,27 +70,12 @@
                 return this.NumberOfPeople * this.PricePerPerson;
             }
         }
-
-        public void Reserve(int numberOfPeople)
-        {
-            this.NumberOfPeople = numberOfPeople;
-        }
-
-        public void OrderFood(IFood food)
-        {
-            this.FoodOrders.Add(food);
-        }
-
-        public void OrderDrink(IDrink drink)
-        {
-            this.DrinkOrders.Add(drink);
-        }
-
+              
         public decimal GetBill()
         {
             decimal totalFoodPrice = this.FoodOrders.Sum(x => x.Price);
             decimal totalDrinkPrice = this.DrinkOrders.Sum(x => x.Price);
-            return totalFoodPrice + totalDrinkPrice;
+            return totalFoodPrice + totalDrinkPrice + Price;
         }
 
         public List<IFood> FoodOrders
@@ -119,9 +104,8 @@
 
         public void Clear()
         {
-            this.foodOrders.Clear();
-            this.drinkOrders.Clear();
-            this.NumberOfPeople = 0;
+            this.FoodOrders.Clear();
+            this.DrinkOrders.Clear();
             this.IsReserved = false;
         }
 
@@ -129,6 +113,7 @@
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Table: {this.TableNumber}");
+
             if (this.PricePerPerson == 2.50M)
             {
                 sb.AppendLine($"Type: InsideTable");
@@ -137,10 +122,11 @@
             {
                 sb.AppendLine($"Type: OutsideTable");
             }
+
             sb.AppendLine($"Capacity: {this.Capacity}");
             sb.AppendLine($"Price per Person: {this.PricePerPerson}");
 
-            return sb.ToString();
+            return sb.ToString().TrimEnd();
         }
 
         public string GetOccupiedTableInfo()
@@ -165,9 +151,9 @@
             }
             else
             {
-                sb.AppendLine($"Food orders: {this.foodOrders.Count}");
+                sb.AppendLine($"Food orders: {FoodOrders.Count}");
 
-                foreach (var foodItem in this.foodOrders)
+                foreach (var foodItem in FoodOrders)
                 {
                     sb.AppendLine(foodItem.ToString());
                 }
@@ -179,15 +165,29 @@
             }
             else
             {
-                sb.AppendLine($"Drink orders: {this.drinkOrders.Count}");
+                sb.AppendLine($"Drink orders: {DrinkOrders.Count}");
 
-                foreach (var drinkItem in this.drinkOrders)
+                foreach (var drinkItem in DrinkOrders)
                 {
                     sb.AppendLine(drinkItem.ToString());
                 }
             }
 
-            return sb.ToString();
+            return sb.ToString().TrimEnd();
+        }
+        public void Reserve(int numberOfPeople)
+        {
+            this.NumberOfPeople = numberOfPeople;
+        }
+
+        public void OrderFood(IFood food)
+        {
+            this.FoodOrders.Add(food);
+        }
+
+        public void OrderDrink(IDrink drink)
+        {
+            this.DrinkOrders.Add(drink);
         }
     }
 }

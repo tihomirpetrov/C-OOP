@@ -1,13 +1,8 @@
 ﻿namespace SoftUniRestaurant.Models.Drinks.Contracts
 {
-    public interface IDrink
+    using SoftUniRestaurant.Models.Foods.Contracts;
+    public interface IDrink : IFood
     {
-        string Name { get; }
-
-        int ServingSize { get; }
-
-        decimal Price { get; }
-
         string Brand { get; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿namespace SoftUniRestaurant.Models.Drinks
 {
     using SoftUniRestaurant.Models.Drinks.Contracts;
-    public class Juice : Drink, IDrink
+    public class Juice : Drink
     {
         public const decimal JuicePrice = 1.80M;
 

@@ -1,7 +1,7 @@
 ﻿namespace SoftUniRestaurant.Models.Foods
 {
     using SoftUniRestaurant.Models.Foods.Contracts;
-    public class MainCourse : Food, IFood
+    public class MainCourse : Food
     {
         public const int servingSizeInitial = 500;
 

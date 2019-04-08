@@ -21,7 +21,7 @@
             {
                 return this.name;
             }
-            private set
+            set
             {
                 if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
                 {

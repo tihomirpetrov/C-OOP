@@ -41,8 +41,6 @@
         {
             IFood food = null;
 
-            //var typeOfFood = typeof(RestaurantController).Assembly.GetTypes().FirstOrDefault(x => x.Name == type);
-            //var food = (IFood)Activator.CreateInstance(typeOfFood, new object[] { name, price });
             switch (type.ToLower())
             {
                 case "dessert":
@@ -68,9 +66,6 @@
         {
             IDrink drink = null;
 
-            //var typeOfDrink = typeof(RestaurantController).Assembly.GetTypes().FirstOrDefault(x => x.Name == type);
-            //var drink = (IDrink)Activator.CreateInstance(typeOfDrink, new object[] { name, servingSize, brand });
-
             switch (type.ToLower())
             {
                 case "fuzzydrink":
@@ -95,8 +90,6 @@
         public string AddTable(string type, int tableNumber, int capacity)
         {
             ITable table = null;
-            //var typeOftable = typeof(RestaurantController).Assembly.GetTypes().FirstOrDefault(x => x.Name == type);
-            //var table = (ITable)Activator.CreateInstance(typeOftable, new object[] { tableNumber, capacity });
 
             switch (type.ToLower())
             {
@@ -115,12 +108,12 @@
 
         public string ReserveTable(int numberOfPeople)
         {
-            //ITable table = this.tables.Where(x => x.Capacity >= numberOfPeople).FirstOrDefault();
-
             foreach (var table in tables)
             {
                 if (!table.IsReserved && table.Capacity >= numberOfPeople)
                 {
+                    table.IsReserved = true;
+                    table.NumberOfPeople = numberOfPeople;
                     return $"Table {table.TableNumber} has been reserved for {numberOfPeople} people";
                 }
             }
@@ -130,9 +123,6 @@
 
         public string OrderFood(int tableNumber, string foodName)
         {
-            //ITable table = this.tables.Where(x => x.TableNumber == tableNumber).FirstOrDefault();
-            //IFood food = this.menu.Where(x => x.Name == foodName).FirstOrDefault();
-
             foreach (var table in tables)
             {
                 if (tableNumber == table.TableNumber)
@@ -154,17 +144,17 @@
 
         public string OrderDrink(int tableNumber, string drinkName, string drinkBrand)
         {
-            //ITable table = this.tables.Where(x => x.TableNumber == tableNumber).FirstOrDefault();
-            //IDrink drink = this.drinks.Where(x => x.Name == drinkName).Where(x => x.Brand == drinkBrand).FirstOrDefault();
-
             foreach (var table in tables)
             {
                 if (tableNumber == table.TableNumber)
                 {
                     foreach (var drink in drinks)
                     {
-                        table.OrderDrink(drink);
-                        return $"Table {tableNumber} ordered {drinkName} {drinkBrand}";
+                        if (drink.Name = drink)
+                        {
+                            table.OrderDrink(drink);
+                            return $"Table {tableNumber} ordered {drinkName} {drinkBrand}";
+                        }
                     }
                     return $"There is no {drinkName} {drinkBrand} available";
                 }
