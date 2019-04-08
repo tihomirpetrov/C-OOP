@@ -19,12 +19,12 @@
 
         public Table(int tableNumber, int capacity, decimal pricePerPerson)
         {
-            this.foodOrders = new List<IFood>();
-            this.drinkOrders = new List<IDrink>();
             this.TableNumber = tableNumber;
             this.Capacity = capacity;
             this.PricePerPerson = pricePerPerson;
             this.IsReserved = false;
+            this.FoodOrders = new List<IFood>();
+            this.DrinkOrders = new List<IDrink>();
         }
 
         public int TableNumber { get; set; }
@@ -68,32 +68,53 @@
             get
             {
                 return this.NumberOfPeople * this.PricePerPerson;
-            }            
+            }
         }
 
         public void Reserve(int numberOfPeople)
         {
-            if (this.Capacity >= numberOfPeople)
-            {
-                this.NumberOfPeople = numberOfPeople;
-                this.IsReserved = true;
-            }
+            this.NumberOfPeople = numberOfPeople;
         }
 
         public void OrderFood(IFood food)
         {
-            this.foodOrders.Add(food);
+            this.FoodOrders.Add(food);
         }
 
         public void OrderDrink(IDrink drink)
         {
-            this.drinkOrders.Add(drink);
+            this.DrinkOrders.Add(drink);
         }
 
         public decimal GetBill()
         {
-            decimal totalSum = this.foodOrders.Sum(x => x.Price) + this.drinkOrders.Sum(x => x.Price);
-            return totalSum;
+            decimal totalFoodPrice = this.FoodOrders.Sum(x => x.Price);
+            decimal totalDrinkPrice = this.DrinkOrders.Sum(x => x.Price);
+            return totalFoodPrice + totalDrinkPrice;
+        }
+
+        public List<IFood> FoodOrders
+        {
+            get
+            {
+                return foodOrders;
+            }
+            set
+            {
+                this.foodOrders = value;
+            }
+        }
+
+        public List<IDrink> DrinkOrders
+        {
+            get
+            {
+                return drinkOrders;
+            }
+            set
+            {
+                this.drinkOrders = value;
+            }
         }
 
         public void Clear()
@@ -117,7 +138,7 @@
                 sb.AppendLine($"Type: OutsideTable");
             }
             sb.AppendLine($"Capacity: {this.Capacity}");
-            sb.AppendLine($"Price per person: {this.PricePerPerson}");
+            sb.AppendLine($"Price per Person: {this.PricePerPerson}");
 
             return sb.ToString();
         }
@@ -126,6 +147,7 @@
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Table: {this.TableNumber}");
+
             if (this.PricePerPerson == 2.50M)
             {
                 sb.AppendLine($"Type: InsideTable");
@@ -134,9 +156,10 @@
             {
                 sb.AppendLine($"Type: OutsideTable");
             }
+
             sb.AppendLine($"Number of people: {this.NumberOfPeople}");
 
-            if (this.foodOrders.Count == 0)
+            if (FoodOrders.Count == 0)
             {
                 sb.AppendLine("Food orders: None");
             }
@@ -165,6 +188,6 @@
             }
 
             return sb.ToString();
-        }        
+        }
     }
 }

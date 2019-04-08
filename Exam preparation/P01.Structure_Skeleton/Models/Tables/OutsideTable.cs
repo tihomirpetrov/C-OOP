@@ -1,7 +1,7 @@
 ﻿namespace SoftUniRestaurant.Models.Tables
 {
     using SoftUniRestaurant.Models.Tables.Contracts;
-    public class OutsideTable : Table, ITable
+    public class OutsideTable : Table
     {
         private const decimal PricePerPersonOutsideTable = 3.50M;
 
