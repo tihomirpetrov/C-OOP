@@ -20,6 +20,8 @@
             }
 
             animal.ProcedureTime -= procedureTime;
+
+            ProcedureHistory.Add(animal);
         }
 
         public string History()
@@ -29,7 +31,7 @@
 
             foreach (var animal in ProcedureHistory)
             {
-                sb.AppendLine($"    - {animal.Name} - Happiness: {animal.Happiness} - Energy: {animal.Energy}");
+                sb.AppendLine(animal.ToString());
             }
 
             string result = sb.ToString().TrimEnd();

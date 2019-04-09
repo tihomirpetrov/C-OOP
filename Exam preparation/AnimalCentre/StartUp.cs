@@ -1,12 +1,13 @@
-﻿using System;
-
-namespace AnimalCentre
+﻿namespace AnimalCentre
 {
+    using AnimalCentre.Core;
+    using AnimalCentre.Core.Contracts;
     public class StartUp
     {
         public static void Main(string[] args)
         {
-            //TODO Run your application from here
+            IEngine engine = new Engine();
+            engine.Run();
         }
     }
 }
