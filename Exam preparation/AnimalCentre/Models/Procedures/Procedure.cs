@@ -6,11 +6,12 @@
     using System.Text;
     public abstract class Procedure : IProcedure
     {
+        protected ICollection<IAnimal> procedureHistory;
         protected Procedure()
         {
-            this.ProcedureHistory = new List<IAnimal>();
+            this.procedureHistory = new List<IAnimal>();
         }
-        protected ICollection<IAnimal> ProcedureHistory { get; }
+        
 
         public virtual void DoService(IAnimal animal, int procedureTime)
         {
@@ -21,7 +22,7 @@
 
             animal.ProcedureTime -= procedureTime;
 
-            ProcedureHistory.Add(animal);
+            procedureHistory.Add(animal);
         }
 
         public string History()
@@ -29,7 +30,7 @@
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"{this.GetType().Name}");
 
-            foreach (var animal in ProcedureHistory)
+            foreach (var animal in procedureHistory)
             {
                 sb.AppendLine(animal.ToString());
             }
