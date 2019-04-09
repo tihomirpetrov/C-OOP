@@ -24,7 +24,7 @@
             {
                 return income;
             }
-            set
+            private set
             {
                 income = value;
             }
@@ -150,7 +150,7 @@
                 {
                     foreach (var drink in drinks)
                     {
-                        if (drink.Name = drink)
+                        if (drink.Name == drinkName)
                         {
                             table.OrderDrink(drink);
                             return $"Table {tableNumber} ordered {drinkName} {drinkBrand}";
@@ -191,9 +191,10 @@
 
         public string GetOccupiedTablesInfo()
         {
+            var occupiedTables = this.tables.Where(x => x.IsReserved == true).ToList();
             StringBuilder sb = new StringBuilder();
 
-            foreach (var table in this.tables.Where(x => x.IsReserved == true).ToList())
+            foreach (var table in occupiedTables)
             {
                 sb.AppendLine(table.GetOccupiedTableInfo());
             }
