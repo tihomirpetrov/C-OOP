@@ -3,19 +3,19 @@
     public interface IAnimal
     {
         string Name { get; } //private set ?
-        int Happiness { get; }
+        int Happiness { get; set; }
 
-        int Energy { get; }
+        int Energy { get; set; }
 
-        int ProcedureTime { get; }
+        int ProcedureTime { get; set; }
 
-        string Owner { get; }
+        string Owner { get; set; }
 
-        bool IsAdopt { get; }
+        bool IsAdopt { get; set; }
 
-        bool IsChipped { get; }
+        bool IsChipped { get; set; }
 
-        bool IsVaccinated { get; }
+        bool IsVaccinated { get; set; }
 
 //•	Name – string
 //•	Happiness – int (can’t be less than 0 or more than 100. In these cases throw ArgumentException with message "Invalid happiness")

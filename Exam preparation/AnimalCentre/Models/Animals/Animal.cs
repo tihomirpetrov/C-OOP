@@ -29,7 +29,7 @@
                 return happiness;
             }
 
-            private set
+            set
             {
                 if (value < 0 || value > 100)
                 {
@@ -47,7 +47,7 @@
                 return energy;
             }
 
-            private set
+            set
             {
                 if (value < 0 || value > 100)
                 {
