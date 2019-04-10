@@ -12,7 +12,7 @@ namespace BankAccount
             this.Name = name;
             this.Balance = amount;
         }
-
+               
         public string Name
         {
             get => this.name;
