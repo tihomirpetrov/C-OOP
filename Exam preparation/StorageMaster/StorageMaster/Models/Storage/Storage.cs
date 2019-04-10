@@ -21,11 +21,11 @@
             
         }
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
-        public int Capacity { get; set; }
+        public int Capacity { get; private set; }
 
-        public int GarageSlots { get; set; }
+        public int GarageSlots { get; private set; }
 
         public bool IsFull
         {
