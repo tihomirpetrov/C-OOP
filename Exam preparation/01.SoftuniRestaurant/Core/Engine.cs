@@ -52,8 +52,6 @@
                         case "GetOccupiedTablesInfo":
                             Console.WriteLine(this.restaurantController.GetOccupiedTablesInfo());
                             break;
-                        default:
-                            break;
                     }
                 }
                 catch (Exception ex)
