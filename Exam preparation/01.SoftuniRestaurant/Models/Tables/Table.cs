@@ -129,7 +129,7 @@ namespace SoftUniRestaurant.Models.Tables
 
         public void Reserve(int numberOfPeople)
         {
-            throw new NotImplementedException();
+            
         }
         public string GetFreeTableInfo()
         {

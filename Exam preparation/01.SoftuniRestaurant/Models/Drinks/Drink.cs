@@ -72,7 +72,7 @@
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Name cannot be null or white space!");
+                    throw new ArgumentException("Brand cannot be null or white space!");
                 }
                 this.brand = value;
             }
