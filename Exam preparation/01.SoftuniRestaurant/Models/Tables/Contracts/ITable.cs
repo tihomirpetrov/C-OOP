@@ -6,13 +6,11 @@ namespace SoftUniRestaurant.Models.Tables.Contracts
 {
     public interface ITable
     {
-        List<IFood> FoodOrders { get; }
-        List<IDrink> DrinkOrders { get; }
         int TableNumber { get; }
         int Capacity { get; }
-        int NumberOfPeople { get; }
+        int NumberOfPeople { get; set; }
         decimal PricePerPerson { get; }
-        bool IsReserved { get; }
+        bool IsReserved { get; set; }
         decimal Price { get; }
         void Reserve(int numberOfPeople);
         void OrderFood(IFood food);

@@ -3,20 +3,17 @@ using SoftUniRestaurant.Models.Foods.Contracts;
 using SoftUniRestaurant.Models.Tables.Contracts;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SoftUniRestaurant.Models.Tables
 {
     public abstract class Table : ITable
     {
-        private List<IFood> foodOrders = new List<IFood>();
-        private List<IDrink> drinkOrders = new List<IDrink>();
-        private int tableNumber;
+        private List<IFood> foodOrders;
+        private List<IDrink> drinkOrders;
         private int capacity;
         private int numberOfPeople;
-        private decimal pricePerPerson;
-        private bool isReserved = false;
-        private decimal price;
 
         //•	FoodOrders – collection of foods accessible only by the base class.
         //•	DrinkOrders – collection of drinks accessible only by the base class. 
@@ -32,12 +29,10 @@ namespace SoftUniRestaurant.Models.Tables
             this.TableNumber = tableNumber;
             this.Capacity = capacity;
             this.PricePerPerson = pricePerPerson;
+            this.foodOrders = new List<IFood>();
+            this.drinkOrders = new List<IDrink>();
+            this.IsReserved = false;
         }
-
-        public List<IFood> FoodOrders { get; private set; }
-
-        public List<IDrink> DrinkOrders { get; private set; }
-
         public int TableNumber { get; private set; }
 
         public int Capacity
@@ -48,7 +43,7 @@ namespace SoftUniRestaurant.Models.Tables
             }
             private set
             {
-                if (value < 0)
+                if (value <= 0)
                 {
                     throw new ArgumentException("Capacity has to be greater than 0");
                 }
@@ -62,9 +57,9 @@ namespace SoftUniRestaurant.Models.Tables
             {
                 return this.numberOfPeople;
             }
-            private set
+            set
             {
-                if (value < 0)
+                if (value <= 0)
                 {
                     throw new ArgumentException("Cannot place zero or less people!");
                 }
@@ -72,68 +67,97 @@ namespace SoftUniRestaurant.Models.Tables
             }
         }
 
-        public decimal PricePerPerson
-        {
-            get; private set;
-        }
+        public decimal PricePerPerson { get; private set; }
 
-        public bool IsReserved
-        {
-            get
-            {
-                return this.IsReserved;
-            }
-            private set
-            {
-                this.IsReserved = true;
-            }
-        }
+        public bool IsReserved { get; set; }
 
-        public decimal Price
-        {
-            get
-            {
-                return this.price;
-            }
-
-            private set
-            {
-                this.price = value;
-            }
-        }
+        public decimal Price => this.PricePerPerson * this.numberOfPeople;
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            this.foodOrders.Clear();
+            this.drinkOrders.Clear();
+            this.IsReserved = false;
+            this.numberOfPeople = 0;
         }
 
         public decimal GetBill()
         {
-            throw new NotImplementedException();
+            decimal totalSumFoodAndDrinkPrice = this.foodOrders.Sum(x => x.Price) + this.drinkOrders.Sum(x => x.Price);
+            decimal totalSum = totalSumFoodAndDrinkPrice + Price;
+            Clear();
+            return totalSum;
         }
 
         public string GetOccupiedTableInfo()
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Table: {this.TableNumber}");
+
+            if (this.PricePerPerson == 2.50M)
+            {
+                sb.AppendLine("Type: InsideTable");
+            }
+            else
+            {
+                sb.AppendLine("Type: OutsideTable");
+            }
+            sb.AppendLine($"Number of people: {this.NumberOfPeople}");
+
+            if (this.foodOrders.Count == 0)
+            {
+                sb.AppendLine("Food orders: None");
+            }
+            else
+            {
+                sb.AppendLine($"Food orders: {this.foodOrders.Count}");
+                sb.AppendLine($"{string.Join(Environment.NewLine, this.foodOrders)}");
+            }
+
+            if (this.drinkOrders.Count == 0)
+            {
+                sb.AppendLine("Drink orders: None");
+            }
+            else
+            {
+                sb.AppendLine($"Drink orders: {this.drinkOrders.Count}");
+                sb.AppendLine($"{string.Join(Environment.NewLine, this.drinkOrders)}");
+            }
+
+            return sb.ToString().TrimEnd();
         }
 
         public void OrderDrink(IDrink drink)
         {
-            throw new NotImplementedException();
+            this.drinkOrders.Add(drink);
         }
 
         public void OrderFood(IFood food)
         {
-            throw new NotImplementedException();
+            this.foodOrders.Add(food);
         }
 
         public void Reserve(int numberOfPeople)
         {
-            
+            this.NumberOfPeople = numberOfPeople;
+            IsReserved = true;
         }
         public string GetFreeTableInfo()
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Table: {this.TableNumber}");
+            if (this.PricePerPerson == 2.50M)
+            {
+                sb.AppendLine("Type: InsideTable");
+            }
+            else
+            {
+                sb.AppendLine("Type: OutsideTable");
+            }
+            sb.AppendLine($"Capacity: {this.Capacity}");
+            sb.AppendLine($"Price per Person: {this.PricePerPerson}");
+
+            return sb.ToString().TrimEnd();
         }
     }
 }
