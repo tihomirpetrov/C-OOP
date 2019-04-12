@@ -2,7 +2,7 @@
 {
     public class Satchel : Bag
     {
-        public const int SatchelCapacity = 20;
+        private const int SatchelCapacity = 20;
         public Satchel() 
             : base(SatchelCapacity)
         {

@@ -13,9 +13,23 @@
 
         public Bag(int capacity)
         {
-            this.capacity = capacity;
-            this.load = load;
+            this.capacity = 100;
+            this.Load = load;
             this.Items = new List<Item>();
+        }
+
+        public int Capacity { get; private set; }
+        public int Load
+        {
+            get
+            {
+                return this.load;
+            }
+            private set
+            {
+                var itemsSum = this.items.Sum(x => x.Weight);
+                this.load = itemsSum;
+            }
         }
 
         public List<Item> Items { get; set; }
@@ -34,7 +48,7 @@
 
         public Item GetItem(string name)
         {
-            if (items.Count == 0)
+            if (Items.Count == 0)
             {
                 throw new InvalidOperationException("Bag is empty!");
             }
@@ -42,7 +56,7 @@
             {
                 throw new ArgumentException($"No item with name {name} in bag!");
             }
-            items.Remove(Item);
+            Items.Remove(name);
         }
     }
 }

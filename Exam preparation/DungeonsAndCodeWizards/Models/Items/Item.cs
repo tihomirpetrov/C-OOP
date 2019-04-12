@@ -1,5 +1,6 @@
 ﻿namespace DungeonsAndCodeWizards.Models.Items
 {
+    using DungeonsAndCodeWizards.Models.Characters;
     using System;
     public abstract class Item
     {
@@ -21,7 +22,7 @@
 
         public virtual void AffectCharacter(Character character)
         {
-            if (IsAlive = false)
+            if (character.IsAlive == false)
             {
                 throw new ArgumentException("Must be alive to perform this action!");
             }

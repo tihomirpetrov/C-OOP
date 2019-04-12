@@ -1,5 +1,6 @@
 ﻿namespace DungeonsAndCodeWizards.Models.Items
 {
+    using DungeonsAndCodeWizards.Models.Characters;
     public class ArmorRepairKit : Item
     {
         private const int ArmorRepairKitWeight = 10;
@@ -12,9 +13,7 @@
         {
             base.AffectCharacter(character);
 
-            //The character’s armor restored up to the base armor value.
-            //Example: Armor: 10, Base Armor: 100  Armor: 100
-
+            character.Armor = character.BaseArmor;
         }
     }
 }

@@ -13,17 +13,19 @@
         private double armor;
         private double abilityPoints;
         private List<Bags> bag;
-        private enum faction { CSharp, Java};
         private bool isAlive;
         private double restHealMultiplier;
 
         public Character(string name, double health, double armor, double abilityPoints, Bag bag, Faction faction)
         {
-            this.isAlive = true;
+            this.Name = name;
+            this.IsAlive = isAlive;
             this.health = health;
+            this.baseHealth = 100;
             this.armor = armor;
+            this.baseArmor = 100;
             this.abilityPoints = abilityPoints;
-            this.bag = new List<Bags>();            
+            this.bag = new List<Bags>();
         }
 
         public string Name
@@ -39,34 +41,87 @@
             }
         }
 
+        public double BaseHealth { get; private set; }
+        public double Health { get; set; }
+        public double BaseArmor { get; private set; }
+        public double Armor { get; set; }
+        public bool IsAlive
+        {
+            get
+            {
+                return this.isAlive;
+            }
+            set
+            {
+                isAlive = true;
+            }
+        }
+        public double AbilityPoints { get; set; }
+
+        public enum Faction { CSharp, Java };
+
         public void TakeDamage(double hitPoints)
         {
-
+            if (this.isAlive)
+            {
+                if (hitPoints - this.armor < 0)
+                {
+                    double leftHitPoints = hitPoints - this.armor;
+                    this.armor -= hitPoints - leftHitPoints;
+                    if (this.health - leftHitPoints > 0)
+                    {
+                        this.health -= leftHitPoints;
+                    }
+                    else
+                    {
+                        this.isAlive = false;
+                    }
+                }
+                else
+                {
+                    this.armor -= hitPoints;
+                }
+            }
         }
 
         public void Rest()
         {
-
+            if (this.isAlive)
+            {
+                this.health = health + (100 * restHealMultiplier);
+            }
         }
 
         public void UseItem(Item item)
         {
-
+            if (this.isAlive)
+            {
+                item.AffectCharacter(this);
+            }
         }
 
         public void UseItemOn(Item item, Character character)
         {
-
+            if (this.isAlive && character.isAlive)
+            {
+                item.AffectCharacter(character);
+            }
         }
 
         public void GiveCharacterItem(Item item, Character character)
         {
-
+            if (this.isAlive && character.isAlive)
+            {
+                item.AffectCharacter(character);
+            }
         }
 
         public void ReceiveItem(Item item)
         {
-
+            if (this.isAlive)
+            {
+                this.bag.Add(item);
+            }
         }
     }
 }

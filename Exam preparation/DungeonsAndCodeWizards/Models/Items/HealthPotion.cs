@@ -1,9 +1,10 @@
 ﻿namespace DungeonsAndCodeWizards.Models.Items
 {
+    using DungeonsAndCodeWizards.Models.Characters;
     public class HealthPotion : Item
     {
         private const int HealthPotionWeight = 5;
-        public HealthPotion() 
+        public HealthPotion()
             : base(HealthPotionWeight)
         {
         }
@@ -12,8 +13,9 @@
         {
             base.AffectCharacter(character);
 
-            if(IsAlive)
+            if (character.IsAlive)
             {
+                character.Health += 20;
                 //The character’s health gets increased by 20 points.
             }
         }
