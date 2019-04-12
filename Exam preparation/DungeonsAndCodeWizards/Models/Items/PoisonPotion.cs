@@ -16,13 +16,7 @@
             if (character.IsAlive)
             {
                 character.Health -= 20;
-                //The character’s health gets decreased by 20 points. 
-            }
-            else if (character.Health <= 0)
-            {
-                //If the character’s health drops to zero, the character dies 
-                character.IsAlive == false;
-            }
+            }           
         }
     }
 }
