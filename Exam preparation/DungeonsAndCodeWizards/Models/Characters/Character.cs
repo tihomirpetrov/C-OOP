@@ -3,7 +3,6 @@
     using DungeonsAndCodeWizards.Models.Bags;
     using DungeonsAndCodeWizards.Models.Items;
     using System;
-    using System.Collections.Generic;
     public abstract class Character
     {
         private string name;
@@ -12,7 +11,6 @@
         private double baseArmor;
         private double armor;
         private double abilityPoints;
-        private List<Bags> bag;
         private bool isAlive;
         private double restHealMultiplier;
 
@@ -25,7 +23,7 @@
             this.armor = armor;
             this.baseArmor = 100;
             this.abilityPoints = abilityPoints;
-            this.bag = new List<Bags>();
+            this.Bag = bag;
         }
 
         public string Name
@@ -58,6 +56,7 @@
         }
         public double AbilityPoints { get; set; }
 
+        public Bag Bag { get; }
         public enum Faction { CSharp, Java };
 
         public void TakeDamage(double hitPoints)
@@ -120,7 +119,7 @@
         {
             if (this.isAlive)
             {
-                this.bag.Add(item);
+                this.Bag.AddItem(item);
             }
         }
     }

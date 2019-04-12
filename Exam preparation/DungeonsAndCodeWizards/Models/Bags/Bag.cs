@@ -9,13 +9,13 @@
     {
         private int capacity;
         private int load;
-        private IReadOnlyCollection<Item> items;
+        private readonly List<Item> items;
 
         public Bag(int capacity)
         {
-            this.capacity = 100;
+            this.Capacity = 100;
             this.Load = load;
-            this.Items = new List<Item>();
+            this.items = new List<Item>();
         }
 
         public int Capacity { get; private set; }
@@ -32,7 +32,13 @@
             }
         }
 
-        public List<Item> Items { get; set; }
+        public IReadOnlyCollection<Item> Items
+        {
+            get
+            {
+                return this.items.AsReadOnly();
+            }
+        }
         public void AddItem(Item item)
         {
             var itemsSum = this.items.Sum(x => x.Weight);
@@ -43,20 +49,25 @@
                 throw new InvalidOperationException("Bag is empty!");
             }
 
-            Items.Add(item);
+            this.items.Add(item);
         }
 
         public Item GetItem(string name)
         {
+            var itemName = this.items.Any(x => x.GetType().Name == name);
+            var item = this.items.First(x => x.GetType().Name == name);
+
             if (Items.Count == 0)
             {
                 throw new InvalidOperationException("Bag is empty!");
             }
-            else if (!Items.Contains(name))
+            else if (!itemName)
             {
                 throw new ArgumentException($"No item with name {name} in bag!");
             }
-            Items.Remove(name);
+            this.items.Remove(item);
+
+            return item;
         }
     }
 }
