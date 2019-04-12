@@ -6,7 +6,11 @@
 		// However, you ARE allowed to use your own namespaces (or no namespaces at all if you prefer) in other classes.
 		public static void Main()
 		{
+            IReader reader = new ConsoleReader();
+            IWriter writer = new ConsoleWriter();
 
-		}
+            var engine = new Engine(reader, writer);
+            engine.Run();
+        }
 	}
 }
