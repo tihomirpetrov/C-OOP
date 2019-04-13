@@ -7,9 +7,5 @@
             : base(name, servingSize, FuzzyDrinkPrice, brand)
         {
         }
-        public override string ToString()
-        {
-            return base.ToString();
-        }
     }
 }

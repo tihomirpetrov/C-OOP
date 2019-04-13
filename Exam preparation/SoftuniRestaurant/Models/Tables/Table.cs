@@ -22,7 +22,7 @@
             this.TableNumber = tableNumber;
             this.Capacity = capacity;
             this.PricePerPerson = pricePerPerson;
-            this.numberOfPeople = 0;
+            //this.numberOfPeople = 0;
             this.IsReserved = false;
         }
 

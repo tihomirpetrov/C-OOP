@@ -70,7 +70,7 @@
 
         public override string ToString()
         {
-            return $"{this.GetType().Name} {this.Brand} - {this.ServingSize}ml - {this.Price:f2}lv";
+            return $"{this.Name} {this.Brand} - {this.ServingSize}ml - {this.Price:f2}lv";
         }
     }
 }

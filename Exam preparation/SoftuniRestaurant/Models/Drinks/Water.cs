@@ -7,10 +7,5 @@
             : base(name, servingSize, WaterPrice, brand)
         {
         }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
     }
 }

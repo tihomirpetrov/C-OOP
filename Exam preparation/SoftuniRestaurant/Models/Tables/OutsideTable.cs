@@ -2,8 +2,10 @@
 {
     public class OutsideTable : Table
     {
-        public OutsideTable(int tableNumber, int capacity, decimal pricePerPerson) 
-            : base(tableNumber, capacity, pricePerPerson)
+        private const decimal InitialPricePerPerson = 3.50M;
+
+        public OutsideTable(int tableNumber, int capacity) 
+            : base(tableNumber, capacity, InitialPricePerPerson)
         {
         }
     }

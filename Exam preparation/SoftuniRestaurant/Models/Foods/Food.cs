@@ -50,12 +50,13 @@
                 {
                     throw new ArgumentException("Price cannot be less or equal to zero!");
                 }
+                this.price = value;
             }
         }
 
         public override string ToString()
         {
-            return $"{GetType().Name}: {this.ServingSize}g - {this.Price:f2}";
+            return $"{this.Name}: {this.ServingSize}g - {this.Price:f2}";
         }
     }
 }

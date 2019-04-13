@@ -7,10 +7,5 @@
             : base(name, InitialServingSize, price)
         {
         }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
     }
 }
