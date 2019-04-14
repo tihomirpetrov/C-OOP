@@ -1,7 +1,8 @@
 ﻿namespace MortalEngines.Entities.BaseMachines
 {
+    using MortalEngines.Entities.Contracts;
     using System.Text;
-    public class Fighter : BaseMachine
+    public class Fighter : BaseMachine, IFighter
     {
 
         private const double initialHealthPoints = 200;
