@@ -1,7 +1,8 @@
 ﻿namespace MortalEngines.Entities.BaseMachines
 {
+    using MortalEngines.Entities.Contracts;
     using System.Text;
-    public class Tank : BaseMachine
+    public class Tank : BaseMachine, ITank
     {
         private const double initialHealthPoints = 100;
 
