@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Text;
     using MortalEngines.Entities.Contracts;
     public abstract class BaseMachine : IMachine
     {
@@ -34,7 +35,7 @@
         public IPilot Pilot
         {
             get => this.Pilot;
-            private set
+            set
             {
                 if (string.IsNullOrEmpty(Pilot.Name))
                 {
@@ -43,17 +44,44 @@
                 this.Pilot = value;
             }
         }
-        public double HealthPoints { get; private set; }
+        public double HealthPoints { get; set; }
 
-        public double AttackPoints { get; private set; }
+        public double AttackPoints { get; set; }
 
-        public double DefensePoints { get; private set; }
+        public double DefensePoints { get; set; }
 
         public IList<string> Targets { get; private set; }
 
-    public void Attack(IMachine target)
+        public void Attack(IMachine target)
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrEmpty(target.ToString()))
+            {
+                throw new NullReferenceException("Target cannot be null");
+            }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"- {this.Name}");
+            sb.AppendLine($" *Type: {this.GetType().Name}");
+            sb.AppendLine($" *Health: {this.HealthPoints}");
+            sb.AppendLine($" *Attack: {this.AttackPoints}");
+            sb.AppendLine($" *Defense: {this.DefensePoints}");
+            if (Targets.Count == 0)
+            {
+                sb.AppendLine($" *Targets: None");
+            }
+            else
+            {
+                foreach (var target in this.Targets)
+                {
+                    sb.Append(string.Join(",", target));
+                }
+            }
+
+            return sb.ToString();
         }
     }
 }
