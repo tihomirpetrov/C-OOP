@@ -1,9 +1,9 @@
-﻿using System.Text;
-
-namespace MortalEngines.Entities.BaseMachines
+﻿namespace MortalEngines.Entities.BaseMachines
 {
+    using System.Text;
     public class Fighter : BaseMachine
     {
+
         private const double initialHealthPoints = 200;
         //private const bool AggressiveMode = true;
         public Fighter(string name, double attackPoints, double defensePoints)
@@ -44,5 +44,6 @@ namespace MortalEngines.Entities.BaseMachines
 
             return sb.ToString();
         }
+
     }
 }

@@ -54,10 +54,17 @@
 
         public void Attack(IMachine target)
         {
-            if (string.IsNullOrEmpty(target.ToString()))
+            if (string.IsNullOrEmpty(Targets.ToString()))
             {
                 throw new NullReferenceException("Target cannot be null");
             }
+            target.HealthPoints -= this.AttackPoints - target.DefensePoints;
+
+            if (target.HealthPoints < 0)
+            {
+                target.HealthPoints = 0;
+            }
+            
         }
 
         public override string ToString()
