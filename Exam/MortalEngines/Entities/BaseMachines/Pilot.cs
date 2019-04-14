@@ -42,16 +42,6 @@
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"{this.Name} - {this.machines.Count} machines");
 
-            //foreach (var machine in machines)
-            //{
-            //    sb.AppendLine($"- {machine.Name}");
-            //    sb.AppendLine($" *Type: {machine.GetType().Name}");
-            //    sb.AppendLine($" *Health: {machine.HealthPoints}");
-            //    sb.AppendLine($" *Attack: {machine.AttackPoints}");
-            //    sb.AppendLine($" *Defense: {machine.DefensePoints}");
-            //    sb.AppendLine($" *Targets: {machine.Targets}");
-            //}
-
             if (this.machines.Count > 0)
             {
                 foreach (var item in this.machines)

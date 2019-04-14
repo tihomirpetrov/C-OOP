@@ -11,17 +11,19 @@
             this.DefenseMode = true;
         }
 
-        public bool DefenseMode { get; set; }
+        public bool DefenseMode { get; private set; }
 
         public void ToggleDefenseMode()
         {
             if (DefenseMode)
             {
+                this.DefenseMode = false;
                 this.AttackPoints -= 40;
                 this.DefensePoints += 30;
             }
             else if (!DefenseMode)
             {
+                this.DefenseMode = true;
                 this.AttackPoints += 40;
                 this.DefensePoints -= 30;
             }
