@@ -1,12 +1,11 @@
-﻿using System.Text;
-
-namespace MortalEngines.Entities.BaseMachines
+﻿namespace MortalEngines.Entities.BaseMachines
 {
+    using System.Text;
     public class Tank : BaseMachine
     {
         private const double initialHealthPoints = 100;
 
-        public Tank(string name, double attackPoints, double defensePoints) 
+        public Tank(string name, double attackPoints, double defensePoints)
             : base(name, attackPoints, defensePoints, initialHealthPoints)
         {
             this.DefenseMode = true;

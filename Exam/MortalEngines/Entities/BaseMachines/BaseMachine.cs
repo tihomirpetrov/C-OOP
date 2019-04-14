@@ -7,9 +7,10 @@
     public abstract class BaseMachine : IMachine
     {
         private string name;
-        private double healthPoints;
-        private double attackPoints;
-        private double defensePoints;
+        private IPilot pilot;
+        //private double healthPoints;
+        //private double attackPoints;
+        //private double defensePoints;
 
         public BaseMachine(string name, double attackPoints, double defensePoints, double healthPoints)
         {
@@ -17,6 +18,8 @@
             this.AttackPoints = attackPoints;
             this.DefensePoints = defensePoints;
             this.HealthPoints = healthPoints;
+            this.pilot = null;
+            this.Targets = new List<string>();
         }
 
         public string Name
@@ -34,14 +37,14 @@
 
         public IPilot Pilot
         {
-            get => this.Pilot;
+            get => this.pilot;
             set
             {
-                if (string.IsNullOrEmpty(Pilot.Name))
+                if (this.pilot == null) //value
                 {
                     throw new NullReferenceException("Pilot cannot be null.");
                 }
-                this.Pilot = value;
+                this.pilot = value;
             }
         }
         public double HealthPoints { get; set; }
@@ -50,11 +53,11 @@
 
         public double DefensePoints { get; set; }
 
-        public IList<string> Targets { get; private set; }
+        public IList<string> Targets { get; set; }
 
         public void Attack(IMachine target)
         {
-            if (string.IsNullOrEmpty(Targets.ToString()))
+            if (target == null)
             {
                 throw new NullReferenceException("Target cannot be null");
             }
@@ -64,7 +67,6 @@
             {
                 target.HealthPoints = 0;
             }
-            
         }
 
         public override string ToString()
@@ -76,9 +78,10 @@
             sb.AppendLine($" *Health: {this.HealthPoints}");
             sb.AppendLine($" *Attack: {this.AttackPoints}");
             sb.AppendLine($" *Defense: {this.DefensePoints}");
+            sb.Append(" *Targets: ");
             if (Targets.Count == 0)
             {
-                sb.AppendLine($" *Targets: None");
+                sb.AppendLine("None");
             }
             else
             {

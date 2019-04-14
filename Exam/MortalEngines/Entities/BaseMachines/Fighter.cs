@@ -12,17 +12,19 @@
             this.AggressiveMode = true;
         }
 
-        public bool AggressiveMode { get; set; }
+        public bool AggressiveMode { get; private set; }
 
         public void ToggleAggressiveMode()
         {
             if (AggressiveMode)
             {
+                this.AggressiveMode = false;
                 this.AttackPoints += 50;
                 this.DefensePoints -= 25;
             }
             else if (!AggressiveMode)
             {
+                this.AggressiveMode = true;
                 this.AttackPoints -= 50;
                 this.DefensePoints += 25;
             }

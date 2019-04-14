@@ -18,7 +18,7 @@
         public string Name
         {
             get => this.name;
-            set
+            private set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -30,7 +30,7 @@
         
         public void AddMachine(IMachine machine)
         {
-            if (string.IsNullOrEmpty(machine.GetType().Name))
+            if (machine == null)
             {
                 throw new NullReferenceException("Null machine cannot be added to the pilot.");
             }
@@ -42,14 +42,22 @@
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"{this.Name} - {this.machines.Count} machines");
 
-            foreach (var machine in machines)
+            //foreach (var machine in machines)
+            //{
+            //    sb.AppendLine($"- {machine.Name}");
+            //    sb.AppendLine($" *Type: {machine.GetType().Name}");
+            //    sb.AppendLine($" *Health: {machine.HealthPoints}");
+            //    sb.AppendLine($" *Attack: {machine.AttackPoints}");
+            //    sb.AppendLine($" *Defense: {machine.DefensePoints}");
+            //    sb.AppendLine($" *Targets: {machine.Targets}");
+            //}
+
+            if (this.machines.Count > 0)
             {
-                sb.AppendLine($"- {machine.Name}");
-                sb.AppendLine($" *Type: {machine.GetType().Name}");
-                sb.AppendLine($" *Health: {machine.HealthPoints}");
-                sb.AppendLine($" *Attack: {machine.AttackPoints}");
-                sb.AppendLine($" *Defense: {machine.DefensePoints}");
-                sb.AppendLine($" *Targets: {machine.Targets}");
+                foreach (var item in this.machines)
+                {
+                    sb.AppendLine(item.ToString());
+                }
             }
 
             return sb.ToString();
