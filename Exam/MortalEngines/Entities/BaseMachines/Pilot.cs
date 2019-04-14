@@ -18,7 +18,7 @@
         public string Name
         {
             get => this.name;
-            private set
+            set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -50,7 +50,7 @@
                 }
             }
 
-            return sb.ToString();
+            return sb.ToString().TrimEnd();
         }
     }
 }

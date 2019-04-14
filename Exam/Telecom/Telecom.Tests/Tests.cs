@@ -7,60 +7,79 @@ namespace Telecom.Tests
     [TestFixture]
     public class Tests
     {
-        [Test]
-        public void ConstructorShouldSetProperValues()
+        private Phone phone;
+        private Dictionary<string, string> contacts;
+
+        [SetUp]
+        public void SetUp()
         {
-            string make = "Nokia";
-            string model = "3310";
-            Phone phone = new Phone(make, model);
+            phone = new Phone("Nokia", "3310");
+        }
 
-
-            Assert.AreEqual(make, phone.Make);
-            Assert.AreEqual(model, phone.Model);
-
-            //test ctor setting proper values
+        [Test]
+        public void TestConstructor()
+        {
+            Assert.AreEqual("Nokia", phone.Make);
+            Assert.AreEqual("3310", phone.Model);
+        }
+        
+        [Test]
+        public void TestGetPhoneMakeCorrectly()
+        {
+            Assert.AreEqual("Nokia", phone.Make);
+        }
+        [Test]
+        public void TestGetPhoneModelCorrectly()
+        {
+            Assert.AreEqual("3310", phone.Model);
         }
 
         [Test]
         [TestCase(null)]
         [TestCase("")]
-        public void MakeShouldThrowExceptionCanntBeEmptyOrNull(string make)
+        public void TestGetPhoneMakeThrowException(string make)
         {
-            string model = "3310";
-
-            Assert.That(() => new Phone(make, model), Throws.ArgumentException.With.Message.EqualTo($"Invalid {nameof(Phone.Make)}!"));
+            Assert.Throws<ArgumentException>(() => new Phone(make, "3310"));
         }
 
         [Test]
-        [TestCase(null)]
         [TestCase("")]
-        public void ModelShouldThrowExceptionCanntBeEmptyOrNull(string model)
+        [TestCase(null)]
+        public void TestGetPhoneModelThrowException(string model)
         {
-            string make = "Nokia";
-
-
-            Assert.That(() => new Phone(make, model), Throws.ArgumentException.With.Message.EqualTo($"Invalid {nameof(Phone.Model)}!"));
+            Assert.Throws<ArgumentException>(() => new Phone("Nokia", model));
         }
 
+        [Test]
+        public void TestCountCorrectly()
+        {
+            phone.AddContact("Ivan", "0888123456");
+            phone.AddContact("Pesho", "0989123456");
 
-        //[Test]
-        //public void ModelShouldThrowInvalidOperationExceptionPersonAlreadyExists()
-        //{
-        //    string name = "Ivan";
-        //    string phone = "123456789";
-            
-        //    Dictionary<string, string> phonebook = new Dictionary<string, string>();
-                       
+            Assert.AreEqual(2, phone.Count);
+        }
 
-        //    Phone phone2 = new Phone("nokia", "3310");
+        [Test]
+        public void TestAddContactThrowException()
+        {
+            phone.AddContact("Ivan", "0888123456");
+            Assert.Throws<InvalidOperationException>(() => phone.AddContact("Ivan", "0989123456"));
+        }
 
-        //    phone2.AddContact(name, phone);
-        //    phonebook.Add(name, phone);
-            
+        [Test]
+        public void TestCallCorrectly()
+        {
+            phone.AddContact("Ivan", "0888");
+            phone.AddContact("Pesho", "0999");
+            Assert.AreEqual("Calling Ivan - 0888...", phone.Call("Ivan"));
+        }
 
-        //    Assert.That(() => phonebook.ContainsKey(name), Throws.InvalidOperationException.With.Message.EqualTo("Person already exists!"));
-
-        //    //test model with empty or whitespace
-        //}
+        [Test]
+        public void TestCallThrowException()
+        {
+            phone.AddContact("Ivan", "0888");
+            phone.AddContact("Pesho", "0999");
+            Assert.Throws<InvalidOperationException>(() => phone.Call("Gosho"));
+        }
     }
 }

@@ -24,14 +24,14 @@
 
         public string Name
         {
-            get => this.Name;
+            get => this.name;
             private set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException("Machine name cannot be null or empty.");
                 }
-                this.Name = value;
+                this.name = value;
             }
         }
 
@@ -40,7 +40,7 @@
             get => this.pilot;
             set
             {
-                if (this.pilot == null) //value
+                if (value == null) //value
                 {
                     throw new NullReferenceException("Pilot cannot be null.");
                 }
@@ -75,9 +75,9 @@
 
             sb.AppendLine($"- {this.Name}");
             sb.AppendLine($" *Type: {this.GetType().Name}");
-            sb.AppendLine($" *Health: {this.HealthPoints}");
-            sb.AppendLine($" *Attack: {this.AttackPoints}");
-            sb.AppendLine($" *Defense: {this.DefensePoints}");
+            sb.AppendLine($" *Health: {this.HealthPoints:f2}");
+            sb.AppendLine($" *Attack: {this.AttackPoints:f2}");
+            sb.AppendLine($" *Defense: {this.DefensePoints:f2}");
             sb.Append(" *Targets: ");
             if (Targets.Count == 0)
             {
@@ -91,7 +91,7 @@
                 }
             }
 
-            return sb.ToString();
+            return sb.ToString().TrimEnd();
         }
     }
 }
